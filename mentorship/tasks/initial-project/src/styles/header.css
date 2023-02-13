@@ -1,0 +1,61 @@
+header ul {
+  list-style: none;
+  cursor: pointer;
+}
+header ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 2em;
+  transition: 0.2s ease-in-out;
+}
+header ul li:hover {
+  color: orange;
+}
+.header {
+  display: flex;
+  /* position: relative; */
+  align-items: center;
+  justify-content: center;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70pt;
+  padding-right: 70pt;
+}
+.form {
+  float: right;
+  padding: 2rem;
+}
+.login {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  box-shadow: 6px 6px 10px lightgray;
+}
+.login:hover {
+  color: white;
+  background-color: darkgray;
+}
+.arrow {
+  margin: 0 2pt -2pt 0;
+  display: inline-block;
+}
+.signup {
+  margin: 0 0 0 10px;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  background-color: orange;
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  box-shadow: 5px 5px 10px lightgray;
+}
+.signup:hover {
+  color: white;
+  background-color: darkorange;
+}

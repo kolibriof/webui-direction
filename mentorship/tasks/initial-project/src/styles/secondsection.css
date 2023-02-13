@@ -1,0 +1,88 @@
+.secondsection {
+  padding: 100pt 90pt 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+.orange-line {
+  background-color: orange;
+  width: 40pt;
+  border-radius: 5px;
+  height: 5px;
+}
+.left-text {
+  margin-top: -10pt;
+  word-spacing: 3pt;
+  word-wrap: break-word;
+  inline-size: 25em;
+}
+.header-secondsection,
+.company-photos {
+  flex: 1;
+  width: 50%;
+}
+.company-photos {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3vw;
+}
+
+.samsung img {
+  width: 100%;
+  left: 35pt;
+}
+
+.apple img {
+  width: 80%;
+  bottom: -8pt;
+  right: 20pt;
+}
+
+.hulu img {
+  width: 100%;
+}
+.whatdo {
+  padding-top: 100pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.whatdo-h3 {
+  text-align: center;
+  font-size: 2em;
+}
+.solutions {
+  padding-top: 50pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+  gap: 10%;
+  padding-bottom: 200pt;
+}
+
+.solutions-business,
+.solutions-finance,
+.solutions-market {
+  text-align: center;
+  word-wrap: break-word;
+  inline-size: 15%;
+  line-height: 23pt;
+}
+
+@media screen and (max-width: 927px) {
+  .company-photos {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+    width: fit-content;
+  }
+  .secondsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
