@@ -6,7 +6,7 @@ import { AiFillInstagram } from "react-icons/ai";
 
 function Footer() {
   return (
-    <section className="footer" id="footer">
+    <footer className="footer" id="footer">
       <div className="firstColumn">
         <img src={logo} alt="softserve" />
         <p>All Rights Reserved @ softserve.com</p>
@@ -64,7 +64,7 @@ function Footer() {
           <li>Developers</li>
         </ul>
       </div>
-    </section>
+    </footer>
   );
 }
 

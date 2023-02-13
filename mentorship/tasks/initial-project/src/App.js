@@ -1,7 +1,7 @@
-import Section from "./sections/Section";
-import SecondSection from "./sections/SecondSection";
-import Footer from "./sections/Footer";
-import Header from "./sections/Header";
+import Section from "./components/Section";
+import SecondSection from "./components/SecondSection";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (

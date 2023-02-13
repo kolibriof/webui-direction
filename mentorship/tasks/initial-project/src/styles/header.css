@@ -1,61 +1,113 @@
 header ul {
   list-style: none;
   cursor: pointer;
+  display: flex;
 }
 header ul li {
   list-style: none;
-  display: inline-block;
-  margin-right: 2em;
+  margin-right: 40px;
   transition: 0.2s ease-in-out;
 }
 header ul li:hover {
   color: orange;
 }
+.header-product {
+  display: flex;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-solution {
+  display: flex;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-enterprise {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-pricing {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
 .header {
   display: flex;
-  /* position: relative; */
   align-items: center;
   justify-content: center;
+  width: fit-content;
+  height: 30px;
+  margin-top: 93px;
 }
 
 .header-main {
   display: flex;
   justify-content: space-between;
-  padding-left: 70pt;
-  padding-right: 70pt;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+}
+.image img {
+  width: 202px;
+  height: 45px;
+  margin-left: 190px;
+  margin-top: 97px;
 }
 .form {
-  float: right;
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .login {
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  background-color: lightgray;
-  border-radius: 5px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  color: #757575;
+  margin-top: 80px;
+  margin-right: 45px;
   border: none;
-  text-transform: capitalize;
-  transition: 0.2s ease-in-out;
-  box-shadow: 6px 6px 10px lightgray;
-}
-.login:hover {
-  color: white;
-  background-color: darkgray;
-}
-.arrow {
-  margin: 0 2pt -2pt 0;
-  display: inline-block;
+  text-decoration: none;
 }
 .signup {
-  margin: 0 0 0 10px;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  background-color: orange;
-  border-radius: 5px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  color: #1f1f1f;
+  margin-top: 76px;
+  margin-right: 174px;
+  background-color: #ffca1d;
+  border-radius: 10px;
+  padding: 15px 42px;
   border: none;
-  text-transform: capitalize;
-  transition: 0.2s ease-in-out;
-  box-shadow: 5px 5px 10px lightgray;
 }
-.signup:hover {
-  color: white;
-  background-color: darkorange;
+
+.arrow {
+  display: inline-flex;
+  padding-left: 3px;
+  padding-top: 3px;
+  transform: scale(1.3);
 }
