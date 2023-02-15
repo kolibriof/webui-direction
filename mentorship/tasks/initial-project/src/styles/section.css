@@ -108,7 +108,7 @@
   padding-left: 30.86px;
   padding-top: 50px;
   width: 448.81px;
-  height: 202.66px;
+  height: 170.66px;
   left: 1000.81px;
   top: 600.87px;
   background: #ffffff;
@@ -146,7 +146,7 @@
   padding-left: 25.79px;
   position: absolute;
   width: 375.07px;
-  height: 168.19px;
+  height: 145.19px;
   left: 1363.91px;
   top: 317.28px;
   background: #ffffff;
@@ -174,8 +174,8 @@
   position: absolute;
   width: 112.2px;
   height: 39.27px;
-  left: 320px;
-  top: 10px;
+  left: 310px;
+  top: 15px;
   background: #fd9b79;
   border-radius: 8.4151px;
 }
@@ -202,7 +202,6 @@
   color: #ffffff;
 }
 .lucy-opinion img {
-  margin-top: 9.31px;
   width: 116.04px;
   height: 22.12px;
 }
@@ -226,7 +225,9 @@
   font-size: 21.0976px;
   line-height: 126.9%;
   color: #2b3377;
-  margin-top: 4.6px;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 8px;
 }
 
 .contents-page {

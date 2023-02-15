@@ -92,7 +92,7 @@
 .solutions-business p,
 .solutions-finance p,
 .solutions-market p {
-  width: 490px;
+  width: 480px;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
@@ -101,6 +101,12 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: #585858;
+}
+.solutions-business p {
+  inline-size: 420px;
+}
+.solutions-market p {
+  inline-size: 420px;
 }
 .graph-icon {
   background-color: #fed369;

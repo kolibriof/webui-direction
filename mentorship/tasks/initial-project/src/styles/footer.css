@@ -1,65 +1,81 @@
 .footer {
-  padding: 100pt 90pt 200pt;
-  padding-top: 14vw;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5vw;
+  padding-bottom: 98px;
+  padding-top: 138px;
 }
 .firstColumn {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  box-sizing: border-box;
+  padding-top: 35px;
+  width: 20%;
+  padding-left: 60px;
 }
-.firstColumn > h4 {
-  line-height: 2pt;
+.firstColumn h4 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  color: #2b3377;
+  margin: 0;
+  padding-bottom: 16px;
+  padding-top: 80px;
 }
 .firstColumn p {
-  line-height: 1pt;
-  padding-bottom: 30pt;
+  width: 363px;
+  height: 30px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #5c5e87;
+  margin: 0;
 }
-.secondColumn {
-  padding-left: 100pt;
+.firstColumn img {
+  padding-bottom: 40px;
 }
 .firstColumn-icons {
   display: flex;
-  padding-top: 10pt;
-  gap: 7pt;
-  transform: scale(2);
-  margin-left: 40pt;
+  gap: 23.7px;
 }
-
-.secondColumn ul li {
-  list-style: none;
-  line-height: 40pt;
-}
-.secondColumn ul li,
-.thirdColumn ul li,
-.fourthColumn ul li,
-.fifthColumn ul li {
-  list-style: none;
-  line-height: 40pt;
-  opacity: 0.4;
-}
-
-.secondColumn,
-.thirdColumn,
-.fourthColumn,
-.fifthColumn {
+.footer-single-column {
   list-style: none;
   display: flex;
+  flex-direction: column;
 }
-@media screen and (max-width: 1600px) {
-  .firstColumn p {
-    line-height: 20pt;
-  }
-  .firstColumn {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .firstColumn-icons {
-    margin-right: 2.5vw;
-  }
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  padding-left: 100px;
+}
+.footer-single-column h4 {
+  width: 87px;
+  height: 33px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  color: #2b3377;
+}
+.footer-single-column li {
+  font-family: "Poppins";
+  font-style: normal;
+  width: max-content;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  color: #5c5e87;
+  padding-top: 28px;
+}
+.footer-single-column li a {
+  text-decoration: none;
+  color: #5c5e87;
 }

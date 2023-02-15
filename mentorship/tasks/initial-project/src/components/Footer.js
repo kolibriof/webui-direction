@@ -1,68 +1,44 @@
 import React from "react";
 import "../styles/footer.css";
-import logo from "../media/logo.png";
-import { BsFacebook, BsTwitter, BsTelegram } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
+import logo from "../media/logo_footer.png";
+import { footerLinks, footerIcons } from "../data.js";
 
 function Footer() {
   return (
     <footer className="footer" id="footer">
       <div className="firstColumn">
-        <img src={logo} alt="softserve" />
-        <p>All Rights Reserved @ softserve.com</p>
+        <img src={logo} alt="TeamFlow" />
+        <p>All Rights Reserved © teamflow.com</p>
         <h4>Address</h4>
-        <p>26 W 12th St. New York, Ny 12121, NYC</p>
+        <p>26 W 12th St. New York, NY 10342, NYC</p>
         <h4>Social media</h4>
         <div className="firstColumn-icons">
-          <BsFacebook />
-          <AiFillInstagram />
-          <BsTwitter />
-          <BsTelegram />
+          {footerIcons.map((icon) => {
+            const { src, alt, href } = icon;
+            return (
+              <a href={href} key={Math.random().toString()}>
+                <img src={src} alt={alt} />
+              </a>
+            );
+          })}
         </div>
       </div>
-      <div className="secondColumn">
-        <ul>
-          <h4>Product</h4>
-          <li>Pricing</li>
-          <li>Enterprise</li>
-          <li>Partners</li>
-          <li>Affiliate</li>
-          <li>Antegrations</li>
-          <li>Developers</li>
-        </ul>
-      </div>
-      <div className="thirdColumn">
-        <ul>
-          <h4>Team</h4>
-          <li>Pricing</li>
-          <li>Enterprise</li>
-          <li>Partners</li>
-          <li>Affiliate</li>
-          <li>Antegrations</li>
-          <li>Developers</li>
-        </ul>
-      </div>
-      <div className="fourthColumn">
-        <ul>
-          <h4>Solutions</h4>
-          <li>Pricing</li>
-          <li>Enterprise</li>
-          <li>Partners</li>
-          <li>Affiliate</li>
-          <li>Antegrations</li>
-          <li>Developers</li>
-        </ul>
-      </div>
-      <div className="fifthColumn">
-        <ul>
-          <h4>Resources</h4>
-          <li>Pricing</li>
-          <li>Enterprise</li>
-          <li>Partners</li>
-          <li>Affiliate</li>
-          <li>Antegrations</li>
-          <li>Developers</li>
-        </ul>
+      <div className="footer-links">
+        {footerLinks.map((column) => {
+          const { title, contents } = column;
+          return (
+            <ul className="footer-single-column" key={Math.random().toString()}>
+              <h4>{title}</h4>
+              {contents.map((item) => {
+                return (
+                  <li>
+                    <a href="google.com">{item}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        })}
       </div>
     </footer>
   );

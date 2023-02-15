@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/secondsection.css";
-import photos from "../data";
+import { photos } from "../data.js";
 import magnifier from "../media/icons/magnifier.png";
 import idea from "../media/icons/idea.png";
 import graph from "../media/icons/graph.png";
