@@ -31,7 +31,7 @@ function Footer() {
               <h4>{title}</h4>
               {contents.map((item) => {
                 return (
-                  <li>
+                  <li key={Math.random().toString()}>
                     <a href="google.com">{item}</a>
                   </li>
                 );
