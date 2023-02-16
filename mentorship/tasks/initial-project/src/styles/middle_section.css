@@ -1,4 +1,4 @@
-.secondsection {
+.middle-section {
   padding: 100pt 90pt 0;
   background-color: white;
   display: flex;
@@ -27,7 +27,7 @@
   letter-spacing: 0.02em;
   color: #515151;
 }
-.header-secondsection,
+.header-middle-section,
 .company-photos {
   flex: 1;
   width: 50%;
@@ -42,17 +42,14 @@
   gap: 87px;
 }
 
-.whatdo {
+.heading-middle-section {
   padding-top: 100pt;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
 }
-.whatdo-h3 {
-  color: #565656;
-}
-.whatdo-container h3 {
+.heading-middle-section-container h3 {
   width: 450px;
   height: 71px;
   font-family: "Nunito Sans";
@@ -63,7 +60,7 @@
   letter-spacing: 0.02em;
   color: #565656;
 }
-.whatdo-container span {
+.heading-middle-section-container span {
   color: #ffca1d;
 }
 .solutions {

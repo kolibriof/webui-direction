@@ -3,20 +3,20 @@ import person1 from "../media/person3.png";
 import person2 from "../media/person2.png";
 import review1 from "../media/four_start_review.png";
 import review2 from "../media/five_star_review.png";
-import "../styles/section.css";
+import "../styles/hero_section.css";
 import cursorImage from "../media/cursor_image_lucy_opinion.png";
 import circleImage from "../media/circle_after_cursor_image.png";
 import { welcomeBackgroundImages } from "../data.js";
 import "../styles/hero_background_images.css";
 
-function Section() {
+function HeroSection() {
   return (
     <section className="contents-page">
       <div className="welcome">
         <div className="sub-welcome">
           <h4>👋 Welcome to TeamFlow</h4>
         </div>
-        <div className="big-h">
+        <div className="welcome-message">
           <h1>Work the way that works for you!</h1>
         </div>
         <div className="line"></div>
@@ -26,9 +26,9 @@ function Section() {
         <button className="get-started">Get Started</button>
         {welcomeBackgroundImages.map(({ src, alt, className }) => {
           return (
-            <>
+            <div key={Math.random().toString()}>
               <img src={src} alt={alt} className={className} />
-            </>
+            </div>
           );
         })}
       </div>
@@ -84,4 +84,4 @@ function Section() {
   );
 }
 
-export default Section;
+export default HeroSection;

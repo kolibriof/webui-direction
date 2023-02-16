@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/secondsection.css";
+import "../styles/middle_section.css";
 import { photos } from "../data.js";
 import magnifier from "../media/icons/magnifier.png";
 import idea from "../media/icons/idea.png";
@@ -8,8 +8,8 @@ import graph from "../media/icons/graph.png";
 function SecondSection() {
   return (
     <>
-      <section className="secondsection" id="solutions">
-        <header className="header-secondsection">
+      <section className="middle-section" id="solutions">
+        <header className="header-middle-section">
           <div className="orange-line"></div>
           <div className="left-text">
             <h3>See why over 100,000 teams choose TeamFlow.com</h3>
@@ -26,8 +26,8 @@ function SecondSection() {
           })}
         </div>
       </section>
-      <div className="whatdo">
-        <div className="whatdo-container">
+      <div className="heading-middle-section">
+        <div className="heading-middle-section-container">
           <h3>
             What you <span>can do?</span>
           </h3>

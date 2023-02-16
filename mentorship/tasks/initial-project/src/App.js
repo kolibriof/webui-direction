@@ -1,5 +1,5 @@
-import Section from "./components/Section";
-import SecondSection from "./components/SecondSection";
+import HeroSection from "./components/HeroSection";
+import MiddleSection from "./components/MiddleSection";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Header />
-      <Section />
-      <SecondSection />
+      <HeroSection />
+      <MiddleSection />
       <Footer />
     </>
   );
