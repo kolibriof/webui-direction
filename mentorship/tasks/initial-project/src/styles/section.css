@@ -2,16 +2,7 @@
 .img2 {
   flex: 1;
 }
-.img-person1 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 310.6px;
-  height: 310.6px;
-  left: 1021.99px;
-  top: 245.78px;
-  border-radius: 50%;
-  border: 6.90229px dashed #ffffff;
-}
+
 .img1 .background-person1 {
   position: absolute;
   width: 260.33px;

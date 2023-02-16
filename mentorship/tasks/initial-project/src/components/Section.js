@@ -4,6 +4,10 @@ import person2 from "../media/person2.png";
 import review1 from "../media/four_start_review.png";
 import review2 from "../media/five_star_review.png";
 import "../styles/section.css";
+import cursorImage from "../media/cursor_image_lucy_opinion.png";
+import circleImage from "../media/circle_after_cursor_image.png";
+import { welcomeBackgroundImages } from "../data.js";
+import "../styles/hero_background_images.css";
 
 function Section() {
   return (
@@ -20,6 +24,13 @@ function Section() {
           <h3>Create, Build, Collaborate and ship products faster!</h3>
         </div>
         <button className="get-started">Get Started</button>
+        {welcomeBackgroundImages.map(({ src, alt, className }) => {
+          return (
+            <>
+              <img src={src} alt={alt} className={className} />
+            </>
+          );
+        })}
       </div>
       <div className="photos">
         <div className="img1">
@@ -39,6 +50,16 @@ function Section() {
             <p>Develop Communication Plan</p>
             <img src={review1} alt="review" />
           </div>
+          <img
+            src={cursorImage}
+            alt="background_photo"
+            className="cursor-image-lucy-opinion"
+          />
+          <img
+            src={circleImage}
+            alt="circle"
+            className="circle-after-cursor-image"
+          />
         </div>
         <div className="img2">
           <div className="img-person2">

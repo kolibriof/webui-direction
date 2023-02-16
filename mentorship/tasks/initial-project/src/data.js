@@ -6,6 +6,10 @@ import fbIcon from "./media/icons/fb_icon.png";
 import igIcon from "./media/icons/ig_icon.png";
 import twitterIcon from "./media/icons/twitter_icon.png";
 import youtubeIcon from "./media/icons/youtube_icon.png";
+import cursorWelcome from "./media/welcome_background_figures/welcome_section_cursor.png";
+import triangleWelcome from "./media/welcome_background_figures/welcome_section_triangle.png";
+import rectangleWelcome from "./media/welcome_background_figures/welcome_section_rectangle.png";
+import ellipseWelcome from "./media/welcome_background_figures/welcome_section_ellipse.png";
 
 export const photos = [
   {
@@ -103,5 +107,27 @@ export const footerIcons = [
     src: youtubeIcon,
     alt: "youtube icon",
     href: "https://youtube.com",
+  },
+];
+export const welcomeBackgroundImages = [
+  {
+    src: cursorWelcome,
+    alt: "cursor welcome",
+    className: "cursor-welcome-section",
+  },
+  {
+    src: ellipseWelcome,
+    alt: "ellipse welcome",
+    className: "ellipse-welcome-section",
+  },
+  {
+    src: triangleWelcome,
+    alt: "triangle welcome",
+    className: "triangle-welcome-section",
+  },
+  {
+    src: rectangleWelcome,
+    alt: "rectangle welcome",
+    className: "rectangle-welcome-section",
   },
 ];
