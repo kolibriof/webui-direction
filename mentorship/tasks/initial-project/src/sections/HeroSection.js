@@ -3,11 +3,11 @@ import person1 from "../media/person3.png";
 import person2 from "../media/person2.png";
 import review1 from "../media/four_start_review.png";
 import review2 from "../media/five_star_review.png";
-import "../styles/hero_section.css";
+import "../styles/hero-section.css";
 import cursorImage from "../media/cursor_image_lucy_opinion.png";
 import circleImage from "../media/circle_after_cursor_image.png";
 import { welcomeBackgroundImages } from "../data.js";
-import "../styles/hero_background_images.css";
+import "../styles/hero-background-images.css";
 
 function HeroSection() {
   return (
@@ -23,7 +23,9 @@ function HeroSection() {
         <div className="text-after-line">
           <h3>Create, Build, Collaborate and ship products faster!</h3>
         </div>
-        <button className="get-started">Get Started</button>
+        <div className="get-started-container">
+          <button className="get-started">Get Started</button>
+        </div>
         {welcomeBackgroundImages.map(({ src, alt, className }) => {
           return (
             <div key={Math.random().toString()}>
@@ -34,9 +36,9 @@ function HeroSection() {
       </div>
       <div className="photos">
         <div className="img1">
-          <div className="img-person1">
-            <div className="background-person1">
-              <img src={person1} alt="person1" />
+          <div className="img-lucy">
+            <div className="background-lucy">
+              <img src={person1} alt="lucy_photo" />
             </div>
           </div>
           <div className="name-lucy">
@@ -62,9 +64,9 @@ function HeroSection() {
           />
         </div>
         <div className="img2">
-          <div className="img-person2">
-            <div className="background-person2">
-              <img src={person2} alt="person2" />
+          <div className="img-mark">
+            <div className="background-mark">
+              <img src={person2} alt="mark" />
             </div>
           </div>
           <div className="name-mark">

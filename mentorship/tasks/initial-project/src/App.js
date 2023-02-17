@@ -1,14 +1,14 @@
-import HeroSection from "./components/HeroSection";
-import MiddleSection from "./components/MiddleSection";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import HeroSection from "./sections/HeroSection";
+import Benefits from "./sections/Benefits";
+import Footer from "./sections/Footer";
+import Header from "./sections/Header";
 
 function App() {
   return (
     <>
       <Header />
       <HeroSection />
-      <MiddleSection />
+      <Benefits />
       <Footer />
     </>
   );

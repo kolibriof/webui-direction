@@ -1,15 +1,15 @@
 import React from "react";
-import "../styles/middle_section.css";
+import "../styles/benefits.css";
 import { photos } from "../data.js";
 import magnifier from "../media/icons/magnifier.png";
 import idea from "../media/icons/idea.png";
 import graph from "../media/icons/graph.png";
 
-function SecondSection() {
+function Benefits() {
   return (
     <>
-      <section className="middle-section" id="solutions">
-        <header className="header-middle-section">
+      <section className="benefits" id="solutions">
+        <header className="header-benefits">
           <div className="orange-line"></div>
           <div className="left-text">
             <h3>See why over 100,000 teams choose TeamFlow.com</h3>
@@ -26,8 +26,8 @@ function SecondSection() {
           })}
         </div>
       </section>
-      <div className="heading-middle-section">
-        <div className="heading-middle-section-container">
+      <div className="heading-benefits">
+        <div className="heading-benefits-container">
           <h3>
             What you <span>can do?</span>
           </h3>
@@ -70,4 +70,4 @@ function SecondSection() {
   );
 }
 
-export default SecondSection;
+export default Benefits;

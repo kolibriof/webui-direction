@@ -24,10 +24,12 @@ function Header() {
         </ul>
       </div>
       <div className="form">
-        <a href="#" className="login">
+        <a href="https://www.youtube.com/" className="login">
           Login
         </a>
-        <button className="signup">Sign up</button>
+        <a href="https://www.youtube.com/" className="signup">
+          Sign up
+        </a>
       </div>
     </header>
   );
