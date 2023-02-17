@@ -2,7 +2,6 @@
 .img2 {
   flex: 1;
 }
-
 .img1 .background-lucy {
   position: absolute;
   width: 260.33px;
@@ -12,7 +11,8 @@
   background: #e9eaf6;
   border-radius: 100%;
   overflow: hidden;
-  filter: drop-shadow(5.17672px 17.2557px 41.4137px rgba(41, 43, 107, 0.3));
+  z-index: 1;
+  box-shadow: 5px 5px 40px rgba(41, 43, 107, 0.3);
 }
 .img-lucy img {
   position: absolute;
@@ -22,7 +22,15 @@
   object-fit: cover;
   top: 30px;
 }
-
+.lucy-border {
+  box-sizing: border-box;
+  position: absolute;
+  width: 300.6px;
+  height: 310.6px;
+  left: 1015.99px;
+  top: 236.78px;
+  z-index: 0;
+}
 .img-mark {
   position: absolute;
   width: 191.75px;
@@ -56,6 +64,7 @@
   top: 449.4px;
   background: #fafafa;
   border-radius: 34.5114px;
+  z-index: 1;
 }
 .name-lucy p {
   font-style: normal;

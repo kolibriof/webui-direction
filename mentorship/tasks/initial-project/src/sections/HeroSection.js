@@ -8,6 +8,7 @@ import cursorImage from "../media/cursor_image_lucy_opinion.png";
 import circleImage from "../media/circle_after_cursor_image.png";
 import { welcomeBackgroundImages } from "../data.js";
 import "../styles/hero-background-images.css";
+import borderBackground from "../media/border_lucy.png";
 
 function HeroSection() {
   return (
@@ -41,6 +42,7 @@ function HeroSection() {
               <img src={person1} alt="lucy_photo" />
             </div>
           </div>
+          <img src={borderBackground} alt="border" className="lucy-border" />
           <div className="name-lucy">
             <p>Lucy</p>
           </div>
