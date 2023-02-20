@@ -1,18 +1,17 @@
 import React from "react";
-import { footerLinks } from "../../data.js";
 
-function FooterLinks() {
+function FooterLinks({ footerLinks }) {
   return (
     <div className="footer-links">
-      {footerLinks.map((column) => {
-        const { title, contents } = column;
+      {footerLinks.map(({ title, contents }) => {
         return (
           <ul className="footer-single-column" key={Math.random().toString()}>
             <h4>{title}</h4>
-            {contents.map((item) => {
+            {contents.map((link) => {
+              const { href, label } = link;
               return (
                 <li key={Math.random().toString()}>
-                  <a href="google.com">{item}</a>
+                  <a href={href}>{label}</a>
                 </li>
               );
             })}

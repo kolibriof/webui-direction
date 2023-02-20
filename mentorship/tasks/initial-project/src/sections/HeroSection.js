@@ -1,6 +1,6 @@
 import React from "react";
-import person1 from "../media/person3.png";
-import person2 from "../media/person2.png";
+import person1 from "../media/lucy.png";
+import person2 from "../media/mark.png";
 import review1 from "../media/four_start_review.png";
 import review2 from "../media/five_star_review.png";
 import "../styles/hero-section.css";
@@ -8,7 +8,7 @@ import cursorImage from "../media/cursor_image_lucy_opinion.png";
 import circleImage from "../media/circle_after_cursor_image.png";
 import { welcomeBackgroundImages } from "../data.js";
 import "../styles/hero-background-images.css";
-import borderBackground from "../media/border_lucy.png";
+import borderBackground from "../media/background_border_lucy.png";
 
 function HeroSection() {
   return (
@@ -35,14 +35,18 @@ function HeroSection() {
           );
         })}
       </div>
-      <div className="photos">
-        <div className="img1">
+      <div className="opinions">
+        <div className="lucy">
           <div className="img-lucy">
             <div className="background-lucy">
               <img src={person1} alt="lucy_photo" />
             </div>
           </div>
-          <img src={borderBackground} alt="border" className="lucy-border" />
+          <img
+            src={borderBackground}
+            alt="dashed border background"
+            className="lucy-border"
+          />
           <div className="name-lucy">
             <p>Lucy</p>
           </div>
@@ -65,7 +69,7 @@ function HeroSection() {
             className="circle-after-cursor-image"
           />
         </div>
-        <div className="img2">
+        <div className="mark">
           <div className="img-mark">
             <div className="background-mark">
               <img src={person2} alt="mark" />

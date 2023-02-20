@@ -1,8 +1,8 @@
-.img1,
-.img2 {
+.lucy,
+.mark {
   flex: 1;
 }
-.img1 .background-lucy {
+.lucy .background-lucy {
   position: absolute;
   width: 260.33px;
   top: 5px;
@@ -40,7 +40,7 @@
   border-radius: 50%;
   border: 6.90229px dashed #ffffff;
 }
-.img2 .background-mark {
+.mark .background-mark {
   position: absolute;
   width: 191.75px;
   height: 191.75px;
@@ -261,7 +261,7 @@ button {
   display: flex;
   flex-direction: column;
 }
-.photos {
+.opinions {
   width: 50%;
   margin: 2em 0 0 0;
 }

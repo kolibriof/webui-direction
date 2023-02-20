@@ -13,7 +13,7 @@
   border-radius: 6px;
   border: 4px solid #ffca1d;
 }
-.left-text {
+.discover-text {
   position: absolute;
   width: 700px;
   height: 88px;
@@ -27,11 +27,11 @@
   color: #515151;
 }
 .header-benefits,
-.company-photos {
+.company-logos {
   flex: 1;
   width: 50%;
 }
-.company-photos {
+.company-logos {
   position: absolute;
   width: 797px;
   height: 108px;

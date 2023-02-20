@@ -8,18 +8,18 @@ import graph from "../media/icons/graph.png";
 function Benefits() {
   return (
     <>
-      <section className="benefits" id="solutions">
+      <section className="benefits">
         <header className="header-benefits">
           <div className="orange-line"></div>
-          <div className="left-text">
+          <div className="discover-text">
             <h3>See why over 100,000 teams choose TeamFlow.com</h3>
           </div>
         </header>
-        <div className="company-photos">
+        <div className="company-logos">
           {photos.map((photo) => {
             const { src, alt } = photo;
             return (
-              <div className="samsung" key={Math.random().toString()}>
+              <div key={Math.random().toString()}>
                 <img src={src} alt={alt} />
               </div>
             );

@@ -1,9 +1,10 @@
 import React from "react";
 import "../styles/footer.css";
 import logo from "../media/logo_footer.png";
-
-import FooterIcons from "./components/FooterIcons";
-import FooterLinks from "./components/FooterLinks";
+import { footerIcons } from "../data.js";
+import { footerLinks } from "../data.js";
+import FooterIcons from "../components/FooterIcons";
+import FooterLinks from "../components/FooterLinks";
 
 function Footer() {
   return (
@@ -14,9 +15,9 @@ function Footer() {
         <h4>Address</h4>
         <p>26 W 12th St. New York, NY 10342, NYC</p>
         <h4>Social media</h4>
-        <FooterIcons />
+        <FooterIcons footerIcons={footerIcons} />
       </div>
-      <FooterLinks />
+      <FooterLinks footerLinks={footerLinks} />
     </footer>
   );
 }
