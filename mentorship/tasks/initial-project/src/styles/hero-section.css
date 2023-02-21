@@ -1,18 +1,8 @@
-.img1,
-.img2 {
+.lucy,
+.mark {
   flex: 1;
 }
-.img-person1 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 310.6px;
-  height: 310.6px;
-  left: 1021.99px;
-  top: 245.78px;
-  border-radius: 50%;
-  border: 6.90229px dashed #ffffff;
-}
-.img1 .background-person1 {
+.lucy .background-lucy {
   position: absolute;
   width: 260.33px;
   top: 5px;
@@ -21,9 +11,10 @@
   background: #e9eaf6;
   border-radius: 100%;
   overflow: hidden;
-  filter: drop-shadow(5.17672px 17.2557px 41.4137px rgba(41, 43, 107, 0.3));
+  z-index: 1;
+  box-shadow: 5px 5px 40px rgba(41, 43, 107, 0.3);
 }
-.img-person1 img {
+.img-lucy img {
   position: absolute;
   left: 50px;
   width: 169px;
@@ -31,8 +22,16 @@
   object-fit: cover;
   top: 30px;
 }
-
-.img-person2 {
+.lucy-border {
+  box-sizing: border-box;
+  position: absolute;
+  width: 300.6px;
+  height: 310.6px;
+  left: 1015.99px;
+  top: 236.78px;
+  z-index: 0;
+}
+.img-mark {
   position: absolute;
   width: 191.75px;
   height: 191.75px;
@@ -41,7 +40,7 @@
   border-radius: 50%;
   border: 6.90229px dashed #ffffff;
 }
-.img2 .background-person2 {
+.mark .background-mark {
   position: absolute;
   width: 191.75px;
   height: 191.75px;
@@ -49,7 +48,7 @@
   border-radius: 100%;
   overflow: hidden;
 }
-.img-person2 img {
+.img-mark img {
   position: absolute;
   left: 20px;
   width: 169px;
@@ -65,9 +64,9 @@
   top: 449.4px;
   background: #fafafa;
   border-radius: 34.5114px;
+  z-index: 1;
 }
 .name-lucy p {
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -93,7 +92,6 @@
   width: 36.01px;
   height: 19.64px;
   margin-top: 15px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 11.8258px;
@@ -120,7 +118,6 @@
   padding-top: 5.61px;
   width: 356.24px;
   height: 32.26px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 25.2453px;
@@ -133,7 +130,6 @@
   width: 88.36px;
   height: 30.86px;
   padding: 5px 10px 10px 10px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 23.8428px;
@@ -156,7 +152,6 @@
 .span-mark-opinion {
   width: 180.08px;
   height: 28.05px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 22.4403px;
@@ -194,7 +189,6 @@
   height: 25.61px;
   margin: 0;
   padding: 5px 5px 0px 15px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 19.9255px;
@@ -208,7 +202,6 @@
 .span-lucy-opinion {
   width: 94.94px;
   height: 23.28px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 18.7534px;
@@ -219,7 +212,6 @@
 .lucy-opinion p {
   width: 297.71px;
   height: 26.77px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 21.0976px;
@@ -251,9 +243,9 @@ button {
   background: #ffffff;
   box-shadow: 2px 2px 12px rgba(38, 40, 82, 0.1);
   border-radius: 10px;
+  padding-left: 8px;
 }
 .sub-welcome h4 {
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -269,18 +261,17 @@ button {
   display: flex;
   flex-direction: column;
 }
-.photos {
+.opinions {
   width: 50%;
   margin: 2em 0 0 0;
 }
-.big-h {
+.welcome-message {
   color: #ffffff;
   width: 677px;
 }
-.big-h h1 {
+.welcome-message h1 {
   margin-top: 18px;
   margin-bottom: 30px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 800;
   font-size: 64px;
@@ -301,7 +292,6 @@ button {
 }
 .text-after-line h3 {
   height: 96px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
@@ -309,21 +299,12 @@ button {
   letter-spacing: 0.02em;
   color: #ffffff;
 }
-.get-started {
-  width: 230px;
-  height: 70px;
-  font-family: "Nunito Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 126.9%;
-  color: #2c2c2c;
-  background: #ffca1d;
-  border-radius: 10px;
-  border: none;
-  padding: 19px 47px 18px 46px;
+.get-started-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
 }
-.get-started:hover {
-  color: white;
-  background-color: darkorange;
+.get-started {
+  padding: 18px 47px 18px 46px;
+  z-index: 99;
 }

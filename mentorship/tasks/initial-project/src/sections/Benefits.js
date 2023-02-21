@@ -1,33 +1,33 @@
 import React from "react";
-import "../styles/secondsection.css";
+import "../styles/benefits.css";
 import { photos } from "../data.js";
 import magnifier from "../media/icons/magnifier.png";
 import idea from "../media/icons/idea.png";
 import graph from "../media/icons/graph.png";
 
-function SecondSection() {
+function Benefits() {
   return (
     <>
-      <section className="secondsection" id="solutions">
-        <header className="header-secondsection">
+      <section className="benefits">
+        <header className="header-benefits">
           <div className="orange-line"></div>
-          <div className="left-text">
+          <div className="discover-text">
             <h3>See why over 100,000 teams choose TeamFlow.com</h3>
           </div>
         </header>
-        <div className="company-photos">
+        <div className="company-logos">
           {photos.map((photo) => {
             const { src, alt } = photo;
             return (
-              <div className="samsung" key={Math.random().toString()}>
+              <div key={Math.random().toString()}>
                 <img src={src} alt={alt} />
               </div>
             );
           })}
         </div>
       </section>
-      <div className="whatdo">
-        <div className="whatdo-container">
+      <div className="heading-benefits">
+        <div className="heading-benefits-container">
           <h3>
             What you <span>can do?</span>
           </h3>
@@ -70,4 +70,4 @@ function SecondSection() {
   );
 }
 
-export default SecondSection;
+export default Benefits;

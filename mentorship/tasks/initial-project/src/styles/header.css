@@ -2,6 +2,7 @@ header ul {
   list-style: none;
   cursor: pointer;
   display: flex;
+  z-index: 99;
 }
 header ul li {
   list-style: none;
@@ -13,7 +14,6 @@ header ul li:hover {
 }
 .header-product {
   display: flex;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -23,7 +23,6 @@ header ul li:hover {
 }
 .header-solution {
   display: flex;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -32,7 +31,6 @@ header ul li:hover {
   color: #eeeeee;
 }
 .header-enterprise {
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -41,7 +39,6 @@ header ul li:hover {
   color: #eeeeee;
 }
 .header-pricing {
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -71,7 +68,7 @@ header ul li:hover {
   width: 202px;
   height: 45px;
   margin-left: 190px;
-  margin-top: 97px;
+  margin-top: 86px;
 }
 .form {
   display: flex;
@@ -79,7 +76,6 @@ header ul li:hover {
   align-items: center;
 }
 .login {
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -90,21 +86,23 @@ header ul li:hover {
   border: none;
   text-decoration: none;
 }
-.signup {
-  font-family: "Nunito Sans";
+.signup,
+.get-started {
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 126.9%;
   color: #1f1f1f;
-  margin-top: 76px;
   margin-right: 174px;
   background-color: #ffca1d;
   border-radius: 10px;
   padding: 15px 42px;
   border: none;
+  text-decoration: none;
 }
-
+.signup {
+  margin-top: 76px;
+}
 .arrow {
   display: inline-flex;
   padding-left: 3px;

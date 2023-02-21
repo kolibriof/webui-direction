@@ -1,4 +1,4 @@
-.secondsection {
+.benefits {
   padding: 100pt 90pt 0;
   background-color: white;
   display: flex;
@@ -13,13 +13,12 @@
   border-radius: 6px;
   border: 4px solid #ffca1d;
 }
-.left-text {
+.discover-text {
   position: absolute;
   width: 700px;
   height: 88px;
   left: 195px;
   top: 1130px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -27,12 +26,12 @@
   letter-spacing: 0.02em;
   color: #515151;
 }
-.header-secondsection,
-.company-photos {
+.header-benefits,
+.company-logos {
   flex: 1;
   width: 50%;
 }
-.company-photos {
+.company-logos {
   position: absolute;
   width: 797px;
   height: 108px;
@@ -42,20 +41,16 @@
   gap: 87px;
 }
 
-.whatdo {
+.heading-benefits {
   padding-top: 100pt;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
 }
-.whatdo-h3 {
-  color: #565656;
-}
-.whatdo-container h3 {
+.heading-benefits-container h3 {
   width: 450px;
   height: 71px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -63,7 +58,7 @@
   letter-spacing: 0.02em;
   color: #565656;
 }
-.whatdo-container span {
+.heading-benefits-container span {
   color: #ffca1d;
 }
 .solutions {
@@ -80,7 +75,6 @@
 .solutions-finance h4,
 .solutions-market h4 {
   height: 35px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -93,7 +87,6 @@
 .solutions-finance p,
 .solutions-market p {
   width: 480px;
-  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
