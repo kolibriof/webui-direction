@@ -28,4 +28,4 @@
 - [Node.js - The Complete Guide](https://www.udemy.com/course/nodejs-the-complete-guide/): Build scalable web applications with Node.js and learn about topics such as the Node.js event loop, HTTP module, and more.
 - [Understanding TypeScript](https://www.udemy.com/course/understanding-typescript/): Learn to write cleaner, more scalable code with TypeScript, a typed superset of JavaScript.
 - [MERN eCommerce From Scratch](https://www.udemy.com/course/mern-ecommerce/): Build a full-stack eCommerce application with MongoDB, Express, React, and Node.js.
-
+- [Unit Testing for Typescript & NodeJs Developers with Jest](https://www.udemy.com/course/unit-testing-typescript-nodejs/): Master unit testing with NodeJs, Typescript, Jest and React. Write top quality Typescript and NodeJs software with Jest
