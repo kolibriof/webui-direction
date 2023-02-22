@@ -77,4 +77,17 @@
 - Pay attention to visualization. Add transitions and animations to make the application more attractive to users.
 - In the future, we will be adding testing for these components and adding new functionality. Keep this in mind while developing the task.
 
+### Phases 
+
+First phase: 
+- greetings section 
+- calendar section view 
+- mocked context and progress section 
+
+Second phase:
+- tabs and lists sections view 
+
+Third phase(last one): 
+- Modals and logic 
+
 [template]: <https://www.figma.com/community/file/1199461468787541244>
