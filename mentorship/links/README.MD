@@ -19,8 +19,6 @@
 - [Instrumental Core](https://www.youtube.com/@InstrumentalCore), [Grandma's Smuzi](https://www.youtube.com/@Grandmassmuzi): This is just good music for programming
 
 
-## Udemy
-
 ## Udemy Courses
 
 - [Modern HTML & CSS from the Beginning](https://www.udemy.com/course/modern-html-css-from-the-beginning/): Learn how to create responsive websites using HTML and CSS.
