@@ -1,0 +1,16 @@
+body {
+  width: 1920px;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+.main-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.todo-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

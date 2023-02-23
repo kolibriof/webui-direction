@@ -1,0 +1,43 @@
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.calendar-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.calendar-week {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  background-color: whitesmoke;
+  padding-right: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.single-day {
+  font-weight: bold;
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+.current-day {
+  background-color: lightseagreen;
+  border-radius: 5px;
+  padding: 20px;
+  color: white;
+}
+.calendar-current-date h1 {
+  margin: 0;
+  opacity: 0.5;
+}
