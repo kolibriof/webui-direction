@@ -1,0 +1,310 @@
+.lucy,
+.mark {
+  flex: 1;
+}
+.lucy .background-lucy {
+  position: absolute;
+  width: 260.33px;
+  top: 5px;
+  left: 15px;
+  height: 282.15px;
+  background: #e9eaf6;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 5px 5px 40px rgba(41, 43, 107, 0.3);
+}
+.img-lucy img {
+  position: absolute;
+  left: 50px;
+  width: 169px;
+  height: 252px;
+  object-fit: cover;
+  top: 30px;
+}
+.lucy-border {
+  box-sizing: border-box;
+  position: absolute;
+  width: 300.6px;
+  height: 310.6px;
+  left: 1015.99px;
+  top: 236.78px;
+  z-index: 0;
+}
+.img-mark {
+  position: absolute;
+  width: 191.75px;
+  height: 191.75px;
+  left: 1514.05px;
+  top: 578.05px;
+  border-radius: 50%;
+  border: 6.90229px dashed #ffffff;
+}
+.mark .background-mark {
+  position: absolute;
+  width: 191.75px;
+  height: 191.75px;
+  background: #4b4aef;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.img-mark img {
+  position: absolute;
+  left: 20px;
+  width: 169px;
+  height: 252px;
+  object-fit: contain;
+}
+
+.name-lucy {
+  position: absolute;
+  width: 241.58px;
+  height: 67.3px;
+  left: 915px;
+  top: 449.4px;
+  background: #fafafa;
+  border-radius: 34.5114px;
+  z-index: 1;
+}
+.name-lucy p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 126.9%;
+  color: #494949;
+  text-align: center;
+  padding-top: 15px;
+  margin: 0;
+}
+.name-mark {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 91.65px;
+  height: 26.19px;
+  left: 1655.96px;
+  top: 633.8px;
+  background: #fafafa;
+  border-radius: 19.8012px;
+}
+.name-mark p {
+  width: 36.01px;
+  height: 19.64px;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11.8258px;
+  line-height: 126.9%;
+  color: #279e73;
+}
+.mark-opinion {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30.86px;
+  padding-top: 50px;
+  width: 448.81px;
+  height: 170.66px;
+  left: 1000.81px;
+  top: 600.87px;
+  background: #ffffff;
+  box-shadow: 0px 89.761px 145.862px rgba(0, 0, 0, 0.05);
+  border-radius: 19.1456px;
+  box-sizing: border-box;
+}
+.mark-opinion p {
+  padding-top: 5.61px;
+  width: 356.24px;
+  height: 32.26px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25.2453px;
+  line-height: 126.9%;
+  color: #2b3377;
+  margin: 0;
+}
+.done-mark-opinion h5 {
+  margin: 0;
+  width: 88.36px;
+  height: 30.86px;
+  padding: 5px 10px 10px 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23.8428px;
+  line-height: 126.9%;
+  color: white;
+}
+.lucy-opinion {
+  box-sizing: border-box;
+  padding-top: 37.25px;
+  padding-left: 25.79px;
+  position: absolute;
+  width: 375.07px;
+  height: 145.19px;
+  left: 1363.91px;
+  top: 317.28px;
+  background: #ffffff;
+  box-shadow: 0px 75.0135px 121.897px rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+}
+.span-mark-opinion {
+  width: 180.08px;
+  height: 28.05px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22.4403px;
+  line-height: 126.9%;
+  color: #6c71a1;
+}
+.mark-opinion img {
+  width: 138.85px;
+  height: 26.65px;
+  left: 10px;
+  top: 100px;
+  padding-top: 11.22px;
+}
+.done-mark-opinion {
+  position: absolute;
+  width: 112.2px;
+  height: 39.27px;
+  left: 310px;
+  top: 15px;
+  background: #fd9b79;
+  border-radius: 8.4151px;
+}
+.done-lucy-opinion {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 82.05px;
+  height: 32.59px;
+  background: #3adad9;
+  border-radius: 7.03252px;
+}
+.done-lucy-opinion h5 {
+  position: absolute;
+  width: 48.06px;
+  height: 25.61px;
+  margin: 0;
+  padding: 5px 5px 0px 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.9255px;
+  line-height: 126.9%;
+  color: #ffffff;
+}
+.lucy-opinion img {
+  width: 116.04px;
+  height: 22.12px;
+}
+.span-lucy-opinion {
+  width: 94.94px;
+  height: 23.28px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18.7534px;
+  line-height: 126.9%;
+  color: #6c71a1;
+}
+
+.lucy-opinion p {
+  width: 297.71px;
+  height: 26.77px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21.0976px;
+  line-height: 126.9%;
+  color: #2b3377;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 8px;
+}
+
+.contents-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50pt;
+  height: 977px;
+}
+
+button {
+  cursor: pointer;
+}
+.sub-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 138px;
+  width: 288px;
+  height: 54px;
+  background: #ffffff;
+  box-shadow: 2px 2px 12px rgba(38, 40, 82, 0.1);
+  border-radius: 10px;
+  padding-left: 8px;
+}
+.sub-welcome h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160.4%;
+  letter-spacing: 0.04em;
+  color: #606060;
+  text-align: center;
+}
+.welcome {
+  width: 677px;
+  height: 100%;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.opinions {
+  width: 50%;
+  margin: 2em 0 0 0;
+}
+.welcome-message {
+  color: #ffffff;
+  width: 677px;
+}
+.welcome-message h1 {
+  margin-top: 18px;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  height: 165px;
+}
+.line {
+  width: 65px;
+  height: 0px;
+  left: 190px;
+  top: 557px;
+  border: 3px solid #3adad9;
+  border-radius: 11px;
+}
+.text-after-line {
+  width: 625px;
+}
+.text-after-line h3 {
+  height: 96px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 160.4%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.get-started-container {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+}
+.get-started {
+  padding: 18px 47px 18px 46px;
+  z-index: 99;
+}
