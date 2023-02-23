@@ -20,8 +20,8 @@ function Progress() {
             <GoGraph className="progress-icon graph" />
           </div>
         </div>
-        <div className={`progress-bar ${dailyScore <= 0 && `zero-score`}`}>
-          <strong>{dailyScore <= 0 && "0%"}</strong>
+        <div className={`progress-bar ${weeklyScore <= 0 && `zero-score`}`}>
+          <strong>{weeklyScore <= 0 && "0%"}</strong>
         </div>
       </div>
       <div className="daily-score">
@@ -47,8 +47,12 @@ function Progress() {
             <RiCalendarTodoLine className="progress-icon todocalendar" />
           </div>
         </div>
-        <div className={`progress-bar ${dailyScore <= 0 && `zero-score`}`}>
-          <strong>{dailyScore <= 0 && "0%"}</strong>
+        <div
+          className={`progress-bar ${
+            uncompletedTasks.length === 0 && `zero-score`
+          }`}
+        >
+          <strong>{uncompletedTasks.length === 0 && "0%"}</strong>
         </div>
       </div>
     </section>
