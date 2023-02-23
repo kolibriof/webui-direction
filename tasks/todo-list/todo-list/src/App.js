@@ -1,6 +1,7 @@
 import Greetings from "./sections/Greetings";
 import Calendar from "./sections/Calendar";
 import Tasks from "./sections/Tasks";
+import Progress from "./sections/Progress";
 import "./index.css";
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
           <Greetings />
           <Calendar />
         </div>
-        <Tasks />
+      </div>
+      <div className="progress-container">
+        <Progress />
       </div>
     </section>
   );

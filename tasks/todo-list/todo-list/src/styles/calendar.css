@@ -4,11 +4,6 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.calendar-buttons {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
 .calendar-week {
   display: flex;
   flex-direction: row;
@@ -17,12 +12,14 @@
   list-style: none;
   align-items: center;
   text-align: center;
-  background-color: whitesmoke;
-  padding-right: 40px;
+  background-color: white;
+  padding-right: 200px;
+  padding-left: 200px;
   box-sizing: border-box;
   border-radius: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 }
 .single-day {
   font-weight: bold;
