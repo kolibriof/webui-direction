@@ -3,7 +3,7 @@ body {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   background-color: #f2f2f2;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main-page {
   display: flex;
@@ -20,4 +20,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.todo-list.hidden > *:not(.modal-window-container) {
+  z-index: 0;
+  filter: blur(10px);
 }

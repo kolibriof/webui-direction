@@ -1,0 +1,49 @@
+.tasks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 20px;
+  flex-direction: column;
+  width: 990px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  padding-bottom: 20px;
+}
+.tasks-container h1 {
+  font-size: 30px;
+  margin-right: 55px;
+}
+.tasks-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+.tasks-header-container input[type="text"] {
+  border: none;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 800px;
+  border-radius: 15px;
+}
+.tasks-header-container,
+.tasks-add-new-task {
+  flex: 1;
+}
+.tasks-add-new-task {
+  display: flex;
+  transform: scale(3);
+  cursor: pointer;
+  color: white;
+  background-color: violet;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 1.8px;
+  transition: 0.2s ease-in-out;
+}
+.tasks-add-new-task:hover {
+  background-color: darkviolet;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+}

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import List from "../components/List";
-
+import ModalWindow from "../components/ModalWindow";
+import "../styles/tasks.css";
+import { IoMdAddCircleOutline } from "react-icons/io";
+import "../styles/list.css";
 const getLocalStorage = () => {
   let list = localStorage.getItem("list");
   if (list) {
@@ -10,11 +13,12 @@ const getLocalStorage = () => {
   }
 };
 
-function Tasks() {
+function Tasks({ showModal, setShowModal }) {
   const [name, setName] = useState("");
   const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
@@ -31,10 +35,12 @@ function Tasks() {
       setIsEditing(false);
       setName("");
       setEditID(null);
+      setShowModal(!showModal);
     } else {
       const newTask = { id: Math.random().toString(), title: name };
       setList([...list, newTask]);
       setName("");
+      setShowModal(!showModal);
     }
   };
 
@@ -52,38 +58,40 @@ function Tasks() {
     setEditID(id);
     setName(specItem.title);
   };
-  const completeItem = (id) => {
-    const Item = list.find((d) => d.id === id);
-    setEditID(id);
-    setName(Item.title);
-  };
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            placeholder="Your new task..."
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-          <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
+    <>
+      <ModalWindow
+        name={name}
+        handleSubmit={handleSubmit}
+        setName={setName}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
+      <section className="tasks-container">
+        <h1>Tasks</h1>
+        <div className="tasks-header">
+          <div className="tasks-header-container">
+            <input type="text" placeholder="Please enter a task name..." />
+          </div>
+          <div className="tasks-add-new-task">
+            <IoMdAddCircleOutline onClick={() => setShowModal(!showModal)} />
+          </div>
         </div>
-      </form>
-      {list.length > 0 && (
-        <div>
-          <List list={list} editItem={editItem} removeItem={removeItem} />
-          <button onClick={clearList}>Clear List</button>
-        </div>
-      )}
-    </section>
+        {list.length > 0 && (
+          <div className="tasks-task-list">
+            <List list={list} editItem={editItem} removeItem={removeItem} />
+            <button onClick={clearList} className="task-list-clear-list">
+              Clear List
+            </button>
+          </div>
+        )}
+      </section>
+    </>
   );
 }
 

@@ -1,0 +1,36 @@
+.modal-window-container.hide-modal {
+  display: none;
+}
+.modal-window-container.show-modal {
+  display: flex;
+  z-index: 9999;
+}
+
+.modal-window-container {
+  flex-direction: column;
+  position: fixed;
+  transform: translate(0, 50%);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  background-color: white;
+  padding: 100px;
+  transition: 2s ease-in-out;
+}
+.modal-window-close-button {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  background-color: red;
+  padding: 2px 6px 2px 6px;
+  border-radius: 10px;
+  position: absolute;
+  left: 380px;
+  bottom: 265px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.modal-window-close-button:hover {
+  color: white;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+}

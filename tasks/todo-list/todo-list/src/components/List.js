@@ -1,4 +1,7 @@
 import React from "react";
+import "../styles/list.css";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { MdOutlineTaskAlt } from "react-icons/md";
 
 function List({ list, editItem, removeItem }) {
   return (
@@ -7,9 +10,16 @@ function List({ list, editItem, removeItem }) {
         const { id, title } = item;
         return (
           <li key={id}>
+            <MdOutlineTaskAlt className="single-task-icon" />
             <p>{title}</p>
-            <button onClick={() => editItem(id)}>Edit</button>
-            <button onClick={() => removeItem(id)}>Delete</button>
+            <div className="list-span">
+              <span onClick={() => editItem(id)}>
+                <AiOutlineEdit />
+              </span>
+              <span onClick={() => removeItem(id)}>
+                <AiOutlineDelete />
+              </span>
+            </div>
           </li>
         );
       })}
