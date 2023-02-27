@@ -8,9 +8,14 @@ import { useState } from "react";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [showEditingModal, setShowEditingModal] = useState(false);
   return (
     <>
-      <section className={`todo-list ${showModal && `hidden`}`}>
+      <section
+        className={`todo-list ${
+          showModal || showEditingModal ? `hidden` : null
+        }`}
+      >
         <div className="main-page">
           <div className="greetings-calendar-container">
             <Greetings />
@@ -20,7 +25,12 @@ function App() {
         <div className="progress-container">
           <Progress />
         </div>
-        <Tasks showModal={showModal} setShowModal={setShowModal} />
+        <Tasks
+          showModal={showModal}
+          setShowModal={setShowModal}
+          showEditingModal={showEditingModal}
+          setShowEditingModal={setShowEditingModal}
+        />
       </section>
     </>
   );

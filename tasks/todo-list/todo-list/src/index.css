@@ -21,7 +21,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.todo-list.hidden > *:not(.modal-window-container) {
+.todo-list.hidden
+  > *:not(.modal-window-container, .modal-editing-window-container) {
   z-index: 0;
   filter: blur(10px);
 }

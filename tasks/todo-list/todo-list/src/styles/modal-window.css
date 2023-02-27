@@ -15,6 +15,7 @@
   background-color: white;
   padding: 100px;
   transition: 2s ease-in-out;
+  width: 250px;
 }
 .modal-window-close-button {
   font-size: 14px;
@@ -24,7 +25,7 @@
   padding: 2px 6px 2px 6px;
   border-radius: 10px;
   position: absolute;
-  left: 380px;
+  left: 420px;
   bottom: 265px;
   cursor: pointer;
   transition: 0.25s ease-in-out;
