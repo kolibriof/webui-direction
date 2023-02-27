@@ -53,12 +53,13 @@ function Tasks({
       setIsEditing(false);
       setName("");
       setEditID(null);
-      setShowModal(!showModal);
+      setShowEditingModal(!showEditingModal);
     } else {
       const newTask = { id: Math.random().toString(), title: name };
       setList([...list, newTask]);
       setName("");
       setShowModal(!showModal);
+      setShowEditingModal(!showEditingModal);
     }
   };
 
