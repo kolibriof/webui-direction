@@ -59,7 +59,6 @@ function Tasks({
       setList([...list, newTask]);
       setName("");
       setShowModal(!showModal);
-      setShowEditingModal(!showEditingModal);
     }
   };
 
