@@ -2,10 +2,8 @@ import React from "react";
 import "../styles/modal-editing-window.css";
 
 function ModalWindowEdit({
-  editItem,
   showEditingModal,
   setShowEditingModal,
-  list,
   name,
   setName,
   handleSubmit,

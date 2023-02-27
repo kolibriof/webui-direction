@@ -97,7 +97,6 @@ function Tasks({
       <ModalWindowEdit
         showEditingModal={showEditingModal}
         setShowEditingModal={setShowEditingModal}
-        list={list}
         setList={setList}
         handleSubmit={handleSubmit}
         name={name}
