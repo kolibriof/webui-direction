@@ -1,20 +1,23 @@
 .modal-window-container.hide-modal {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .modal-window-container.show-modal {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
   z-index: 9999;
 }
 
 .modal-window-container {
+  align-items: center;
   flex-direction: column;
   position: fixed;
-  transform: translate(0, 50%);
+  transform: translate(0, 20%);
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   background-color: white;
   padding: 100px;
-  transition: 2s ease-in-out;
+  transition: 0.25s ease-in-out;
   width: 250px;
 }
 .modal-window-close-button {
@@ -26,7 +29,7 @@
   border-radius: 10px;
   position: absolute;
   left: 420px;
-  bottom: 265px;
+  bottom: 368px;
   cursor: pointer;
   transition: 0.25s ease-in-out;
 }
@@ -34,4 +37,34 @@
 .modal-window-close-button:hover {
   color: white;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+.modal-window-form input[type="text"] {
+  border: none;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+}
+.modal-window-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-window-form button[type="submit"] {
+  margin-top: 40px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+  transition: 00.25s ease-in-out;
+  cursor: pointer;
+}
+
+.modal-window-form button[type="submit"]:hover {
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  background-color: darkgray;
 }

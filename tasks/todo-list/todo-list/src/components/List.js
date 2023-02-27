@@ -3,13 +3,7 @@ import "../styles/list.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { MdOutlineTaskAlt } from "react-icons/md";
 
-function List({
-  list,
-  editItem,
-  removeItem,
-  showEditingModal,
-  setShowEditingModal,
-}) {
+function List({ list, editItem, removeItem }) {
   return (
     <ul>
       {list.map((item) => {
