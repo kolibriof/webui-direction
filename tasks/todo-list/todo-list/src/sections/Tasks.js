@@ -19,11 +19,12 @@ function Tasks({ showModal, setShowModal }) {
   const [list, setList] = useState(getLocalListStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name) {
-      alert("Enter a task name!");
+      setError(true);
     } else if (name && isEditing) {
       setList(
         list.map((item) => {
@@ -37,11 +38,13 @@ function Tasks({ showModal, setShowModal }) {
       setName("");
       setEditID(null);
       setShowModal(!showModal);
+      setError(false);
     } else {
       const newTask = { id: Math.random().toString(), title: name };
       setList([...list, newTask]);
       setName("");
       setShowModal(!showModal);
+      setError(false);
     }
   };
 
@@ -69,9 +72,11 @@ function Tasks({ showModal, setShowModal }) {
     if (isEditing) {
       setIsEditing(!isEditing);
       setShowModal(!showModal);
+      setError(false);
     } else if (!isEditing) {
       setShowModal(!showModal);
       setName("");
+      setError(false);
     }
   };
   return (
@@ -85,6 +90,7 @@ function Tasks({ showModal, setShowModal }) {
         isEditing={isEditing}
         setIsEditing={setIsEditing}
         handleModalWindow={handleModalWindow}
+        error={error}
       />
       <section className="tasks-container">
         <h1>Tasks</h1>

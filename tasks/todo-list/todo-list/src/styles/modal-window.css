@@ -10,6 +10,7 @@
 
 .modal-window-container {
   align-items: center;
+  text-align: center;
   flex-direction: column;
   position: fixed;
   transform: translate(0, 20%);
@@ -67,4 +68,16 @@
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   color: white;
   background-color: darkgray;
+}
+.error-message {
+  position: absolute;
+  top: 210px;
+  opacity: 0;
+  visibility: hidden;
+  color: red;
+  transition: 0.3s;
+}
+.error-message.show {
+  visibility: visible;
+  opacity: 1;
 }

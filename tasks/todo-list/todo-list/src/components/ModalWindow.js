@@ -8,6 +8,7 @@ function ModalWindow({
   showModal,
   isEditing,
   handleModalWindow,
+  error,
 }) {
   return (
     <div
@@ -30,8 +31,12 @@ function ModalWindow({
             onChange={(e) => {
               setName(e.target.value);
             }}
+            className={`${error && `error`}`}
           />
           <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
+          <p className={`error-message ${error && `show`}`}>
+            Please enter a value!
+          </p>
         </div>
       </form>
     </div>
