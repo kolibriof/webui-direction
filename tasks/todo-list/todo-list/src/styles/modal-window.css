@@ -71,13 +71,14 @@
 }
 .error-message {
   position: absolute;
-  top: 210px;
+  top: 205px;
   opacity: 0;
   visibility: hidden;
   color: red;
   transition: 0.3s;
 }
 .error-message.show {
+  transform: translateY(5px);
   visibility: visible;
   opacity: 1;
 }
