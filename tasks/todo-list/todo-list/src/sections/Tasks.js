@@ -20,6 +20,7 @@ function Tasks({ showModal, setShowModal }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [error, setError] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,6 +80,8 @@ function Tasks({ showModal, setShowModal }) {
       setError(false);
     }
   };
+  const filteredList = list.filter((item) => item.title.includes(searchQuery));
+
   return (
     <>
       <ModalWindow
@@ -96,26 +99,38 @@ function Tasks({ showModal, setShowModal }) {
         <h1>Tasks</h1>
         <div className="tasks-header">
           <div className="tasks-header-container">
-            <input type="text" placeholder="Please enter a task name..." />
+            <input
+              type="text"
+              placeholder="Please enter a task name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
           <div className="tasks-add-new-task">
             <IoMdAddCircleOutline onClick={handleModalWindow} />
           </div>
         </div>
-        {list.length > 0 && (
-          <div className="tasks-task-list">
-            <List
-              list={list}
-              editItem={editItem}
-              removeItem={removeItem}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-            <button onClick={clearList} className="task-list-clear-list">
-              Clear List
-            </button>
-          </div>
-        )}
+        <div className="tasks-task-list">
+          {list.length > 0 && !searchQuery ? (
+            <>
+              <List list={list} editItem={editItem} removeItem={removeItem} />
+              <button onClick={clearList} className="task-list-clear-list">
+                Clear List
+              </button>
+            </>
+          ) : (
+            <ul>
+              {filteredList.length > 0 ? (
+                filteredList.map((item) => {
+                  const { id, title } = item;
+                  return <li key={id}>{title}</li>;
+                })
+              ) : (
+                <h4 className="no-values-error">No tasks found!</h4>
+              )}
+            </ul>
+          )}
+        </div>
       </section>
     </>
   );

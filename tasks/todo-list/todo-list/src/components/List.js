@@ -8,6 +8,7 @@ function List({ list, editItem, removeItem }) {
     <ul>
       {list.map((item) => {
         const { id, title } = item;
+
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />
