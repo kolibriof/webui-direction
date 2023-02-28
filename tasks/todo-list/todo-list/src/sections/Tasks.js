@@ -4,6 +4,8 @@ import ModalWindow from "../components/ModalWindow";
 import "../styles/tasks.css";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import "../styles/list.css";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { MdOutlineTaskAlt } from "react-icons/md";
 
 const getLocalListStorage = () => {
   let list = localStorage.getItem("list");
@@ -101,7 +103,7 @@ function Tasks({ showModal, setShowModal }) {
           <div className="tasks-header-container">
             <input
               type="text"
-              placeholder="Please enter a task name..."
+              placeholder="Search by the task name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -123,7 +125,20 @@ function Tasks({ showModal, setShowModal }) {
               {filteredList.length > 0 ? (
                 filteredList.map((item) => {
                   const { id, title } = item;
-                  return <li key={id}>{title}</li>;
+                  return (
+                    <li key={id}>
+                      <MdOutlineTaskAlt className="single-task-icon" />
+                      <p>{title}</p>
+                      <div className="list-span">
+                        <span onClick={() => editItem(id)}>
+                          <AiOutlineEdit />
+                        </span>
+                        <span onClick={() => removeItem(id)}>
+                          <AiOutlineDelete />
+                        </span>
+                      </div>
+                    </li>
+                  );
                 })
               ) : (
                 <h4 className="no-values-error">No tasks found!</h4>
