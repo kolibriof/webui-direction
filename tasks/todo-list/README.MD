@@ -84,10 +84,16 @@ First phase:
 - calendar section view 
 - mocked context and progress section 
 
+#### Status: In Progress 
+
 Second phase:
 - tabs and lists sections view 
 
+#### Status: Ready to start
+
 Third phase(last one): 
 - Modals and logic 
+
+#### Status: Ready to start
 
 [template]: <https://www.figma.com/community/file/1199461468787541244>

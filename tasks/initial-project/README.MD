@@ -26,5 +26,7 @@ The purpose of this initial task is to assess the knowledge of HTML, CSS, and Gi
 - The project link has been added to the expected result section of this file
 - The completed task has been submitted to the mentor for review 
 
+## Status: Completed
+
 [template]: <https://www.figma.com/community/file/1033884363291199985>
 [GitHubAccessDocs]: <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository>
