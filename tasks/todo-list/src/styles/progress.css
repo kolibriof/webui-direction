@@ -14,6 +14,12 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.15s ease-in-out;
+}
+.weekly-score:hover,
+.daily-score:hover,
+.uncompleted-tasks:hover {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
 }
 .progress-icon {
   margin-left: 50px;

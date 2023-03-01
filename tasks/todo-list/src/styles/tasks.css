@@ -9,6 +9,10 @@
   border-radius: 15px;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
   padding-bottom: 20px;
+  transition: 0.15s ease-in-out;
+}
+.tasks-container:hover {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.3);
 }
 .tasks-container h1 {
   font-size: 30px;

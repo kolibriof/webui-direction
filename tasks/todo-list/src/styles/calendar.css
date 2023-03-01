@@ -4,6 +4,9 @@
   align-items: flex-start;
   flex-direction: column;
 }
+.calendar-week:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
 .calendar-week {
   display: flex;
   flex-direction: row;
@@ -20,6 +23,7 @@
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  transition: 0.15s ease-in-out;
 }
 .single-day {
   font-weight: bold;
@@ -27,6 +31,10 @@
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
   cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+.single-day:hover {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.35);
 }
 .current-day {
   background-color: lightseagreen;
