@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 import Greetings from "./sections/Greetings";
 import Calendar from "./sections/Calendar";
 import Tasks from "./sections/Tasks";
 import Progress from "./sections/Progress";
-import "./index.css";
-import { useState } from "react";
+import { ListContextProvider } from './context/listContext'
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <>
+    <ListContextProvider>
       <section className={`todo-list ${showModal ? `hidden` : null}`}>
         <div className="main-page">
           <div className="greetings-calendar-container">
@@ -21,7 +22,7 @@ function App() {
         </div>
         <Tasks showModal={showModal} setShowModal={setShowModal} />
       </section>
-    </>
+    </ListContextProvider>
   );
 }
 

@@ -3,10 +3,9 @@ import "../styles/progress.css";
 import { GoGraph } from "react-icons/go";
 import { TbStairsUp } from "react-icons/tb";
 import { RiCalendarTodoLine } from "react-icons/ri";
-import { useTaskProgressContext } from "../components/ProgressContext";
 
 function Progress() {
-  const { tasksResult } = useTaskProgressContext();
+  const tasksResult = 12
   return (
     <section className="progress-section">
       <div className="weekly-score">
