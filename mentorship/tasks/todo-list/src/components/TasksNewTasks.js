@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../components/List";
+import List from "./List";
 import "../styles/tasks.css";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import "../styles/list.css";
