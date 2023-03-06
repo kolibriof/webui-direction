@@ -1,0 +1,141 @@
+.benefits {
+  padding: 100pt 90pt 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+.orange-line {
+  position: absolute;
+  width: 70px;
+  height: 0px;
+  left: 195px;
+  top: 1131px;
+  border-radius: 6px;
+  border: 4px solid #ffca1d;
+}
+.discover-text {
+  position: absolute;
+  width: 700px;
+  height: 88px;
+  left: 195px;
+  top: 1130px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: 0.02em;
+  color: #515151;
+}
+.header-benefits,
+.company-logos {
+  flex: 1;
+  width: 50%;
+}
+.company-logos {
+  position: absolute;
+  width: 797px;
+  height: 108px;
+  left: 992px;
+  top: 1145px;
+  display: flex;
+  gap: 87px;
+}
+
+.heading-benefits {
+  padding-top: 100pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.heading-benefits-container h3 {
+  width: 450px;
+  height: 71px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 147.4%;
+  letter-spacing: 0.02em;
+  color: #565656;
+}
+.heading-benefits-container span {
+  color: #ffca1d;
+}
+.solutions {
+  padding-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding-bottom: 200px;
+  gap: 89px;
+}
+
+.solutions-business h4,
+.solutions-finance h4,
+.solutions-market h4 {
+  height: 35px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 147.4%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2b3377;
+}
+.solutions-business p,
+.solutions-finance p,
+.solutions-market p {
+  width: 480px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #585858;
+}
+.solutions-business p {
+  inline-size: 420px;
+}
+.solutions-market p {
+  inline-size: 420px;
+}
+.graph-icon {
+  background-color: #fed369;
+  width: 45.92px;
+  padding: 28px;
+  border-radius: 25px;
+  position: flex;
+}
+.graph-icon-container {
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idea-icon {
+  background-color: #3adad9;
+  width: 45.92px;
+  padding: 28px;
+  border-radius: 25px;
+}
+.idea-icon-container {
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magnifier-icon {
+  background-color: #fd9b79;
+  width: 45.92px;
+  padding: 28px;
+  border-radius: 25px;
+}
+.magnifier-icon-container {
+  height: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,111 @@
+header ul {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  z-index: 99;
+}
+header ul li {
+  list-style: none;
+  margin-right: 40px;
+  transition: 0.2s ease-in-out;
+}
+header ul li:hover {
+  color: orange;
+}
+.header-product {
+  display: flex;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-solution {
+  display: flex;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-enterprise {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header-pricing {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  letter-spacing: 0.02em;
+  color: #eeeeee;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 30px;
+  margin-top: 93px;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+}
+.image img {
+  width: 202px;
+  height: 45px;
+  margin-left: 190px;
+  margin-top: 86px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  color: #757575;
+  margin-top: 80px;
+  margin-right: 45px;
+  border: none;
+  text-decoration: none;
+}
+.signup,
+.get-started {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 126.9%;
+  color: #1f1f1f;
+  margin-right: 174px;
+  background-color: #ffca1d;
+  border-radius: 10px;
+  padding: 15px 42px;
+  border: none;
+  text-decoration: none;
+}
+.signup {
+  margin-top: 76px;
+}
+.arrow {
+  display: inline-flex;
+  padding-left: 3px;
+  padding-top: 3px;
+  transform: scale(1.3);
+}
