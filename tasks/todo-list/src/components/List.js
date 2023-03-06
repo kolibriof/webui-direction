@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/list.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-import { MdOutlineTaskAlt } from "react-icons/md";
+import { MdOutlineTaskAlt, MdDownloadDone } from "react-icons/md";
 
-function List({ list, editItem, removeItem }) {
+function List({ list, editItem, removeItem, handleDoneTasks }) {
   return (
     <ul>
       {list.map((item) => {
@@ -19,6 +19,9 @@ function List({ list, editItem, removeItem }) {
               </span>
               <span onClick={() => removeItem(id)}>
                 <AiOutlineDelete />
+              </span>
+              <span onClick={() => handleDoneTasks(id, title)}>
+                <MdDownloadDone />
               </span>
             </div>
           </li>

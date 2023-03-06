@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/progress.css";
 import { GoGraph } from "react-icons/go";
 import { TbStairsUp } from "react-icons/tb";
 import { RiCalendarTodoLine } from "react-icons/ri";
 
 function Progress() {
-  const [dailyScore, setDailyScore] = useState(0);
-  const [weeklyScore, setWeeklyScore] = useState(0);
-  const [uncompletedTasks, setUncompletedTasks] = useState([]);
-
   return (
     <section className="progress-section">
       <div className="weekly-score">
@@ -20,8 +16,8 @@ function Progress() {
             <GoGraph className="progress-icon graph" />
           </div>
         </div>
-        <div className={`progress-bar ${weeklyScore <= 0 && `zero-score`}`}>
-          <strong>{weeklyScore <= 0 && "0%"}</strong>
+        <div className="progress-bar zero-score">
+          <strong>0%</strong>
         </div>
       </div>
       <div className="daily-score">
@@ -34,8 +30,8 @@ function Progress() {
           </div>
         </div>
 
-        <div className={`progress-bar ${dailyScore <= 0 && `zero-score`}`}>
-          <strong>{dailyScore <= 0 && "0%"}</strong>
+        <div className="progress-bar zero-score">
+          <strong>0%</strong>
         </div>
       </div>
       <div className="uncompleted-tasks">
@@ -47,12 +43,8 @@ function Progress() {
             <RiCalendarTodoLine className="progress-icon todocalendar" />
           </div>
         </div>
-        <div
-          className={`progress-bar ${
-            uncompletedTasks.length === 0 && `zero-score`
-          }`}
-        >
-          <strong>{uncompletedTasks.length === 0 && "0%"}</strong>
+        <div className="progress-bar zero-score">
+          <strong>0%</strong>
         </div>
       </div>
     </section>

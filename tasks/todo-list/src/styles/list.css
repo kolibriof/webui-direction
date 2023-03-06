@@ -16,6 +16,9 @@
   width: 810px;
   margin-right: 108px;
 }
+.completed {
+  margin-left: 70px;
+}
 .tasks-task-list ul li p {
   margin: 0px 30px 0 2px;
   inline-size: 100%;
