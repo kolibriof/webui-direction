@@ -26,6 +26,14 @@ function ProgressContext({ children }) {
   );
   const [isClicked, setIsClicked] = useState(false);
   const [list, setList] = useState(getLocalListStorage());
+  const uncompletedTasks =
+    completedTasks.length <= list.length
+      ? (completedTasks.length / list.length) * 100
+      : 100;
+
+  const tasksResult = !uncompletedTasks ? Math.round(uncompletedTasks) : 0;
+  console.log(uncompletedTasks);
+
   return (
     <TaskProgressContext.Provider
       value={{
@@ -35,6 +43,8 @@ function ProgressContext({ children }) {
         setList,
         isClicked,
         setIsClicked,
+        uncompletedTasks,
+        tasksResult,
       }}
     >
       {children}
