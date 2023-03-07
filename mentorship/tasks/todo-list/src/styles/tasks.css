@@ -17,6 +17,7 @@
 .tasks-container h1 {
   font-size: 30px;
   margin-right: 55px;
+  color: violet;
 }
 .tasks-header {
   display: flex;
@@ -72,4 +73,5 @@
 }
 .completed-tasks-transition-button.clicked {
   width: 155px;
+  text-align: center;
 }

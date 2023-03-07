@@ -39,11 +39,18 @@ function TasksCompletedTasks({
           <ul>
             {completedTasksfilteredList.length > 0 ? (
               completedTasksfilteredList.map((item) => {
-                const { id, name } = item;
+                const { id, name, deadline } = item;
                 return (
                   <li key={id} className={`${isClicked && `completed`}`}>
                     <MdOutlineTaskAlt className="single-task-icon" />
-                    <p>{name}</p>
+                    <p className="single-task-title">{name}</p>
+                    <p
+                      className={`single-task-date ${
+                        isClicked && "completed-date"
+                      }`}
+                    >
+                      {deadline}
+                    </p>
                     <div className="list-span">
                       <span onClick={() => removeCompletedItem(id)}>
                         <AiOutlineDelete />

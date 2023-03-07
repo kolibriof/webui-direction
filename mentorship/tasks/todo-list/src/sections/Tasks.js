@@ -5,6 +5,7 @@ import "../styles/list.css";
 import { useTaskProgressContext } from "../components/ProgressContext";
 import TasksNewTasks from "../components/TasksNewTasks";
 import TasksCompletedTasks from "../components/TasksCompletedTasks";
+import { format } from "date-fns";
 
 function Tasks({ showModal, setShowModal }) {
   const [name, setName] = useState("");
@@ -21,17 +22,21 @@ function Tasks({ showModal, setShowModal }) {
     setCompletedTasks,
     isClicked,
     setIsClicked,
+    selectedDate,
+    setSelectedDate,
+    formattedCompletedDate,
   } = useTaskProgressContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name) {
+    if (!name || !selectedDate) {
       setError(true);
-    } else if (name && isEditing) {
+    } else if (name && selectedDate && isEditing) {
+      const formattedDate = format(selectedDate, "M/dd/yyyy");
       setList(
         list.map((item) => {
           if (item.id === editID) {
-            return { ...item, title: name };
+            return { ...item, title: name, date: formattedDate };
           }
           return item;
         })
@@ -42,7 +47,12 @@ function Tasks({ showModal, setShowModal }) {
       setShowModal(!showModal);
       setError(false);
     } else {
-      const newTask = { id: Math.random().toString(), title: name };
+      const formattedDate = format(selectedDate, "M/dd/yyyy");
+      const newTask = {
+        id: Math.random().toString(),
+        title: name,
+        date: formattedDate,
+      };
       setList([...list, newTask]);
       setName("");
       setShowModal(!showModal);
@@ -87,8 +97,12 @@ function Tasks({ showModal, setShowModal }) {
       setError(false);
     }
   };
-  const handleDoneTasks = (id, title) => {
-    const newDoneTask = { id: Math.random().toString(), name: title };
+  const handleDoneTasks = (id, title, date) => {
+    const newDoneTask = {
+      id: Math.random().toString(),
+      name: title,
+      deadline: formattedCompletedDate,
+    };
     setCompletedTasks([...completedTasks, newDoneTask]);
     setList(list.filter((k) => k.id !== id));
     setError(false);
@@ -111,6 +125,8 @@ function Tasks({ showModal, setShowModal }) {
         setIsEditing={setIsEditing}
         handleModalWindow={handleModalWindow}
         error={error}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
       />
       <h2
         className={`completed-tasks-transition-button ${
@@ -118,7 +134,7 @@ function Tasks({ showModal, setShowModal }) {
         }`}
         onClick={() => setIsClicked(!isClicked)}
       >
-        {!isClicked ? "Completed Tasks" : "Create A New Task"}
+        {!isClicked ? "Completed Tasks" : "Active Tasks"}
       </h2>
       {!isClicked ? (
         <section className="tasks-container">

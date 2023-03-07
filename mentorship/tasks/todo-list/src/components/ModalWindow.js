@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/modal-window.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function ModalWindow({
   name,
@@ -9,6 +11,8 @@ function ModalWindow({
   isEditing,
   handleModalWindow,
   error,
+  selectedDate,
+  setSelectedDate,
 }) {
   return (
     <div
@@ -32,6 +36,12 @@ function ModalWindow({
               setName(e.target.value);
             }}
             className={`${error && `error`}`}
+          />
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="M/dd/yyyy"
+            className={`${error && "error"}`}
           />
           <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
           <p className={`error-message ${error && `show`}`}>

@@ -20,19 +20,18 @@ const getLocalCompletedTasksStorage = () => {
     return [];
   }
 };
-function ProgressContext({ children }) {
+const ProgressContext = ({ children }) => {
   const [completedTasks, setCompletedTasks] = useState(
     getLocalCompletedTasksStorage()
   );
   const [isClicked, setIsClicked] = useState(false);
   const [list, setList] = useState(getLocalListStorage());
-  const uncompletedTasks =
-    completedTasks.length <= list.length
-      ? (completedTasks.length / list.length) * 100
-      : 100;
-
-  const tasksResult = !uncompletedTasks ? Math.round(uncompletedTasks) : 0;
-  console.log(uncompletedTasks);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const formattedCompletedDate = new Date().toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 
   return (
     <TaskProgressContext.Provider
@@ -43,13 +42,14 @@ function ProgressContext({ children }) {
         setList,
         isClicked,
         setIsClicked,
-        uncompletedTasks,
-        tasksResult,
+        selectedDate,
+        setSelectedDate,
+        formattedCompletedDate,
       }}
     >
       {children}
     </TaskProgressContext.Provider>
   );
-}
+};
 
 export default ProgressContext;

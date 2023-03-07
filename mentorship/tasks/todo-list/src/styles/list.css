@@ -19,7 +19,7 @@
 .completed {
   margin-left: 70px;
 }
-.tasks-task-list ul li p {
+.single-task-title {
   margin: 0px 30px 0 2px;
   inline-size: 100%;
 }
@@ -60,4 +60,18 @@
   background-color: darkred;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
   transform: scale(1.02);
+}
+.single-task-date {
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+  width: 300px;
+  margin: 0 -175px 0 0;
+}
+.single-task-date.completed-date {
+  color: green;
+  margin: 0 -100px 0 0;
+}
+.single-task-date.out-of-deadline {
+  color: red;
 }
