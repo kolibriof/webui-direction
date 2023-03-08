@@ -45,14 +45,20 @@ function Progress() {
     completedTasksForToday.length > 0
       ? Math.round((completedTasksForToday.length / DailyTasksOverall) * 100) +
         "%"
-      : "All done";
+      : completedTasksForToday.length === DailyTasksOverall &&
+        TasksForThisDay.length === 0
+      ? "All done"
+      : "0" + "%";
 
   const weeklyProgress =
     list.length > 0 &&
     TasksForThisWeek.length > 0 &&
     completedThisWeek.length > 0
       ? Math.round((completedThisWeek.length / WeeklyTasksOverall) * 100) + "%"
-      : "All done";
+      : completedThisWeek.length === WeeklyTasksOverall &&
+        TasksForThisWeek.length === 0
+      ? "All done"
+      : "0" + "%";
 
   return (
     <section className="progress-section">

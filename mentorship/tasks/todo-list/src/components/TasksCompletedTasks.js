@@ -39,7 +39,7 @@ function TasksCompletedTasks({
           <ul>
             {completedTasksfilteredList.length > 0 ? (
               completedTasksfilteredList.map((item) => {
-                const { id, name, deadline } = item;
+                const { id, name, dateCompleted } = item;
                 return (
                   <li key={id} className={`${isClicked && `completed`}`}>
                     <MdOutlineTaskAlt className="single-task-icon" />
@@ -49,7 +49,7 @@ function TasksCompletedTasks({
                         isClicked && "completed-date"
                       }`}
                     >
-                      {deadline}
+                      {dateCompleted}
                     </p>
                     <div className="list-span">
                       <span onClick={() => removeCompletedItem(id)}>
