@@ -27,7 +27,11 @@ function List({ list, editItem, removeItem, handleDoneTasks }) {
               <span onClick={() => removeItem(id)}>
                 <AiOutlineDelete />
               </span>
-              <span onClick={() => handleDoneTasks(id, title, date)}>
+              <span
+                onClick={() => {
+                  handleDoneTasks(id, title, date);
+                }}
+              >
                 <MdDownloadDone />
               </span>
             </div>

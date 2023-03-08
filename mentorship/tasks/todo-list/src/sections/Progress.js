@@ -15,35 +15,45 @@ function Progress() {
   const currentWeekEnd = new Date(
     currentDate.setDate(currentWeekStart.getDate() + 6)
   );
-  const completedToday = completedTasks.filter((task) => {
-    const taskDate = new Date(task.deadline);
-    return (
-      taskDate.getDate() === currentDate.getDate() &&
-      taskDate.getMonth() === currentDate.getMonth() &&
-      taskDate.getFullYear() === currentDate.getFullYear()
-    );
-  });
-
-  const uncompletedTasks = list.filter((task) => {
-    const taskDate = new Date(task.date);
-    return taskDate >= currentDate;
-  });
 
   const completedThisWeek = completedTasks.filter((task) => {
     const taskDate = new Date(task.deadline);
     return taskDate >= currentWeekStart && taskDate <= currentWeekEnd;
   });
+  const completedTasksForToday = completedTasks.filter((task) => {
+    const taskDeadline = new Date(task.deadline);
+    const taskCompletedDateForToday = new Date(task.dateCompleted);
+    return taskDeadline.getTime() === taskCompletedDateForToday.getTime();
+  });
+  const TasksForThisWeek = list.filter((task) => {
+    const taskDate = new Date(task.date);
+    return taskDate >= currentWeekStart && taskDate <= currentWeekEnd;
+  });
+  const TasksForThisDay = list.filter((task) => {
+    const taskDate = new Date(task.date);
+    const currentDateTasks = new Date();
+    currentDateTasks.setHours(0, 0, 0, 0);
+    return taskDate.getTime() === currentDateTasks.getTime();
+  });
+  const DailyTasksOverall =
+    TasksForThisDay.length + completedTasksForToday.length;
+  const WeeklyTasksOverall = TasksForThisWeek.length + completedThisWeek.length;
 
-  const dailyProgress = Math.round(
-    (completedToday.length /
-      (uncompletedTasks.length + completedToday.length)) *
-      100
-  );
-  const weeklyProgress = Math.round(
-    (completedThisWeek.length /
-      (uncompletedTasks.length + completedThisWeek.length)) *
-      100
-  );
+  const dailyProgress =
+    list.length > 0 &&
+    TasksForThisDay.length > 0 &&
+    completedTasksForToday.length > 0
+      ? Math.round((completedTasksForToday.length / DailyTasksOverall) * 100) +
+        "%"
+      : "All done";
+
+  const weeklyProgress =
+    list.length > 0 &&
+    TasksForThisWeek.length > 0 &&
+    completedThisWeek.length > 0
+      ? Math.round((completedThisWeek.length / WeeklyTasksOverall) * 100) + "%"
+      : "All done";
+
   return (
     <section className="progress-section">
       <div className="weekly-score">
@@ -56,7 +66,7 @@ function Progress() {
           </div>
         </div>
         <div className="progress-bar zero-score">
-          <strong>{weeklyProgress}%</strong>
+          <strong>{weeklyProgress}</strong>
         </div>
       </div>
       <div className="daily-score">

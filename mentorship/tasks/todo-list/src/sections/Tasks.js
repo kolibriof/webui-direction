@@ -101,7 +101,8 @@ function Tasks({ showModal, setShowModal }) {
     const newDoneTask = {
       id: Math.random().toString(),
       name: title,
-      deadline: formattedCompletedDate,
+      dateCompleted: formattedCompletedDate,
+      deadline: date,
     };
     setCompletedTasks([...completedTasks, newDoneTask]);
     setList(list.filter((k) => k.id !== id));
@@ -148,6 +149,7 @@ function Tasks({ showModal, setShowModal }) {
             handleDoneTasks={handleDoneTasks}
             clearList={clearList}
             filteredList={filteredList}
+            setShowModal={setShowModal}
           />
         </section>
       ) : (
