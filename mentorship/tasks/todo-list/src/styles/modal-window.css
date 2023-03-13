@@ -14,7 +14,9 @@
   text-align: center;
   flex-direction: column;
   position: fixed;
-  transform: translate(-0%, -20%);
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   background-color: white;
