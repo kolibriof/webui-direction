@@ -39,6 +39,12 @@ function Progress() {
     TasksForThisDay.length + completedTasksForToday.length;
   const WeeklyTasksOverall = TasksForThisWeek.length + completedThisWeek.length;
 
+  console.log(
+    list.length,
+    TasksForThisDay.length,
+    completedTasksForToday.length
+  );
+  console.log(TasksForThisWeek.length, completedThisWeek.length);
   const dailyProgress =
     list.length > 0 &&
     TasksForThisDay.length > 0 &&
