@@ -13,16 +13,17 @@ function ModalWindow({
   error,
   selectedDate,
   setSelectedDate,
+  description,
+  errorDate,
+  handleDescription,
 }) {
+  const maxLength = 180;
   return (
     <div
       className={`modal-window-container ${
         showModal ? `show-modal` : `hide-modal`
       }`}
     >
-      <span className="modal-window-close-button" onClick={handleModalWindow}>
-        X
-      </span>
       <h1>
         {isEditing ? "Editing task '" + name + "' ..." : "Create a new task..."}
       </h1>
@@ -37,15 +38,53 @@ function ModalWindow({
             }}
             className={`${error && `error`}`}
           />
+          <div className="desctiption-textarea-container">
+            <textarea
+              type="textarea"
+              placeholder="Describe your task briefly.."
+              value={description}
+              onChange={handleDescription}
+              maxLength={maxLength}
+              className="description-textarea"
+            ></textarea>
+            <div
+              className={`character-count-modal-window ${
+                description.length >= 100 && `modified`
+              }`}
+            >
+              {description.length} / {maxLength}
+            </div>
+          </div>
           <DatePicker
             selected={selectedDate}
             onChange={(date) => setSelectedDate(date)}
             dateFormat="M/dd/yyyy"
             className={`${error && "error"}`}
+            placeholderText={"Select deadline for your task.."}
           />
-          <button type="submit">{isEditing ? "Edit" : "Submit"}</button>
+          <div className="modal-window-buttons-container">
+            <button
+              type="submit"
+              className={`modal-window-buttons ${
+                !name || !selectedDate ? `disabled` : null
+              }`}
+              disabled={!name || !selectedDate}
+            >
+              {isEditing ? "Edit" : "Save"}
+            </button>
+            <button
+              type="button"
+              onClick={handleModalWindow}
+              className="modal-window-buttons"
+            >
+              Cancel
+            </button>
+          </div>
+
           <p className={`error-message ${error && `show`}`}>
-            Please enter a value!
+            {errorDate
+              ? "Please enter a valid date that is today or in the future!"
+              : "Please enter a task name!"}
           </p>
         </div>
       </form>

@@ -8,6 +8,8 @@ import TasksCompletedTasks from "../components/TasksCompletedTasks";
 import { format } from "date-fns";
 
 function Tasks({ showModal, setShowModal }) {
+  const [errorDate, setErrorDate] = useState(false);
+  const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
@@ -29,14 +31,23 @@ function Tasks({ showModal, setShowModal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !selectedDate) {
+    if (selectedDate.getTime() < new Date().setHours(0, 0, 0, 0)) {
+      setErrorDate(true);
+      setError(true);
+    } else if (!name || !selectedDate) {
+      setErrorDate(false);
       setError(true);
     } else if (name && selectedDate && isEditing) {
       const formattedDate = format(selectedDate, "M/dd/yyyy");
       setList(
         list.map((item) => {
           if (item.id === editID) {
-            return { ...item, title: name, date: formattedDate };
+            return {
+              ...item,
+              title: name,
+              date: formattedDate,
+              description: description,
+            };
           }
           return item;
         })
@@ -46,20 +57,22 @@ function Tasks({ showModal, setShowModal }) {
       setEditID(null);
       setShowModal(!showModal);
       setError(false);
+      setErrorDate(false);
     } else {
       const formattedDate = format(selectedDate, "M/dd/yyyy");
       const newTask = {
         id: Math.random().toString(),
         title: name,
         date: formattedDate,
+        description: description,
       };
       setList([...list, newTask]);
       setName("");
       setShowModal(!showModal);
       setError(false);
+      setErrorDate(false);
     }
   };
-
   const clearList = () => {
     setList([]);
   };
@@ -97,12 +110,13 @@ function Tasks({ showModal, setShowModal }) {
       setError(false);
     }
   };
-  const handleDoneTasks = (id, title, date) => {
+  const handleDoneTasks = (id, title, date, description) => {
     const newDoneTask = {
       id: Math.random().toString(),
       name: title,
       dateCompleted: formattedCompletedDate,
       deadline: date,
+      description: description,
     };
     setCompletedTasks([...completedTasks, newDoneTask]);
     setList(list.filter((k) => k.id !== id));
@@ -113,6 +127,12 @@ function Tasks({ showModal, setShowModal }) {
   const completedTasksfilteredList = completedTasks.filter((item) =>
     item.name.includes(completedTasksSearchQuery)
   );
+  const handleDescription = (e) => {
+    const description = e.target.value;
+    if (description.length <= 180) {
+      setDescription(description);
+    }
+  };
 
   return (
     <>
@@ -128,6 +148,10 @@ function Tasks({ showModal, setShowModal }) {
         error={error}
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
+        description={description}
+        setDescription={setDescription}
+        errorDate={errorDate}
+        handleDescription={handleDescription}
       />
       <h2
         className={`completed-tasks-transition-button ${

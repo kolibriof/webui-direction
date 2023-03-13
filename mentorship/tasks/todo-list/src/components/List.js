@@ -8,7 +8,7 @@ function List({ list, editItem, removeItem, handleDoneTasks }) {
   return (
     <ul>
       {list.map((item) => {
-        const { id, title, date } = item;
+        const { id, title, date, description } = item;
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />
@@ -29,7 +29,7 @@ function List({ list, editItem, removeItem, handleDoneTasks }) {
               </span>
               <span
                 onClick={() => {
-                  handleDoneTasks(id, title, date);
+                  handleDoneTasks(id, title, date, description);
                 }}
               >
                 <MdDownloadDone />
