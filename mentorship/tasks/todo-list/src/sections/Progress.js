@@ -39,12 +39,6 @@ function Progress() {
     TasksForThisDay.length + completedTasksForToday.length;
   const WeeklyTasksOverall = TasksForThisWeek.length + completedThisWeek.length;
 
-  console.log(
-    list.length,
-    TasksForThisDay.length,
-    completedTasksForToday.length
-  );
-  console.log(TasksForThisWeek.length, completedThisWeek.length);
   const dailyProgress =
     list.length > 0 &&
     TasksForThisDay.length > 0 &&
@@ -54,7 +48,7 @@ function Progress() {
       : completedTasksForToday.length === DailyTasksOverall &&
         TasksForThisDay.length === 0
       ? "All done"
-      : "0" + "%";
+      : "0%";
 
   const weeklyProgress =
     list.length > 0 &&
@@ -64,7 +58,7 @@ function Progress() {
       : completedThisWeek.length === WeeklyTasksOverall &&
         TasksForThisWeek.length === 0
       ? "All done"
-      : "0" + "%";
+      : "0%";
 
   return (
     <section className="progress-section">

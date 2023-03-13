@@ -76,7 +76,6 @@ function Tasks({ showModal, setShowModal }) {
       setErrorDate(false);
     }
   };
-  console.log(completedTasks);
   const clearList = () => {
     setList([]);
   };
