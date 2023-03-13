@@ -8,11 +8,13 @@ import TasksCompletedTasks from "../components/TasksCompletedTasks";
 import { format } from "date-fns";
 
 function Tasks({ showModal, setShowModal }) {
+  const [viewCompletedTasks, setViewCompletedTasks] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
+  const [viewID, setViewID] = useState(null);
   const [error, setError] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [completedTasksSearchQuery, setCompletedTasksSearchQuery] =
@@ -58,6 +60,7 @@ function Tasks({ showModal, setShowModal }) {
       setShowModal(!showModal);
       setError(false);
       setErrorDate(false);
+      setViewCompletedTasks(false);
     } else {
       const formattedDate = format(selectedDate, "M/dd/yyyy");
       const newTask = {
@@ -73,6 +76,7 @@ function Tasks({ showModal, setShowModal }) {
       setErrorDate(false);
     }
   };
+  console.log(completedTasks);
   const clearList = () => {
     setList([]);
   };
@@ -101,14 +105,14 @@ function Tasks({ showModal, setShowModal }) {
 
   const handleModalWindow = () => {
     if (isEditing) {
-      setIsEditing(!isEditing);
       setShowModal(!showModal);
       setError(false);
-    } else if (!isEditing) {
-      setShowModal(!showModal);
-      setName("");
-      setError(false);
+      setTimeout(() => setIsEditing(!isEditing), 1000);
     }
+    setShowModal(!showModal);
+    setName("");
+    setError(false);
+    setTimeout(() => setViewCompletedTasks(false), 1000);
   };
   const handleDoneTasks = (id, title, date, description) => {
     const newDoneTask = {
@@ -133,7 +137,11 @@ function Tasks({ showModal, setShowModal }) {
       setDescription(description);
     }
   };
-
+  const handleItemView = (id) => {
+    setViewCompletedTasks(true);
+    setShowModal(!showModal);
+    setViewID(id);
+  };
   return (
     <>
       <ModalWindow
@@ -152,6 +160,9 @@ function Tasks({ showModal, setShowModal }) {
         setDescription={setDescription}
         errorDate={errorDate}
         handleDescription={handleDescription}
+        viewCompletedTasks={viewCompletedTasks}
+        completedTasks={completedTasks}
+        viewID={viewID}
       />
       <h2
         className={`completed-tasks-transition-button ${
@@ -193,6 +204,7 @@ function Tasks({ showModal, setShowModal }) {
             setCompletedTasksSearchQuery={setCompletedTasksSearchQuery}
             removeCompletedItem={removeCompletedItem}
             isClicked={isClicked}
+            handleItemView={handleItemView}
           />
         </section>
       )}

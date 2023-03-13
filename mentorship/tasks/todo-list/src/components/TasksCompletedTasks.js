@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/tasks.css";
 import "../styles/list.css";
-import { AiOutlineDelete } from "react-icons/ai";
 import { MdOutlineTaskAlt } from "react-icons/md";
+import { GrFormView } from "react-icons/gr";
 import CompletedTasksList from "./CompletedTasksList";
 
 function TasksCompletedTasks({
@@ -10,9 +10,9 @@ function TasksCompletedTasks({
   completedTasks,
   completedTasksfilteredList,
   setCompletedTasksSearchQuery,
-  removeCompletedItem,
   completedTasksSearchQuery,
   isClicked,
+  handleItemView,
 }) {
   return (
     <>
@@ -52,8 +52,8 @@ function TasksCompletedTasks({
                       {dateCompleted}
                     </p>
                     <div className="list-span">
-                      <span onClick={() => removeCompletedItem(id)}>
-                        <AiOutlineDelete />
+                      <span onClick={() => handleItemView(id)}>
+                        <GrFormView />
                       </span>
                     </div>
                   </li>
