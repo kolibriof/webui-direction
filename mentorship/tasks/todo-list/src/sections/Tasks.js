@@ -7,7 +7,6 @@ import TasksNewTasks from "../components/TasksNewTasks";
 import TasksCompletedTasks from "../components/TasksCompletedTasks";
 import ConfirmationModal from "../components/ConfirmationModal";
 import { format } from "date-fns";
-import { id } from "date-fns/locale";
 
 function Tasks({
   showModal,
