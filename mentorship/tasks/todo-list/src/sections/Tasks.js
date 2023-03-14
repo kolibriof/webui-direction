@@ -5,9 +5,20 @@ import "../styles/list.css";
 import { useTaskProgressContext } from "../components/ProgressContext";
 import TasksNewTasks from "../components/TasksNewTasks";
 import TasksCompletedTasks from "../components/TasksCompletedTasks";
+import ConfirmationModal from "../components/ConfirmationModal";
 import { format } from "date-fns";
+import { id } from "date-fns/locale";
 
-function Tasks({ showModal, setShowModal }) {
+function Tasks({
+  showModal,
+  setShowModal,
+  showConfirmationModal,
+  setShowConfirmationModal,
+}) {
+  const [deleteID, setDeleteID] = useState(null);
+  const [doneTask, setDoneTask] = useState({});
+  const [confirmationState, setConfirmationState] = useState(null);
+  const [confirmationMessage, setConfirmationMessage] = useState("");
   const [viewCompletedTasks, setViewCompletedTasks] = useState(false);
   const [errorDate, setErrorDate] = useState(false);
   const [description, setDescription] = useState("");
@@ -28,7 +39,6 @@ function Tasks({ showModal, setShowModal }) {
     setIsClicked,
     selectedDate,
     setSelectedDate,
-    formattedCompletedDate,
   } = useTaskProgressContext();
 
   const handleSubmit = (e) => {
@@ -80,8 +90,10 @@ function Tasks({ showModal, setShowModal }) {
     setList([]);
   };
 
-  const removeItem = (id) => {
-    setList(list.filter((k) => k.id !== id));
+  const removeItem = () => {
+    setList(list.filter((k) => k.id !== deleteID));
+    setShowConfirmationModal(!showConfirmationModal);
+    setConfirmationMessage("");
   };
 
   const editItem = (id) => {
@@ -113,17 +125,14 @@ function Tasks({ showModal, setShowModal }) {
     setError(false);
     setTimeout(() => setViewCompletedTasks(false), 1000);
   };
-  const handleDoneTasks = (id, title, date, description) => {
-    const newDoneTask = {
-      id: Math.random().toString(),
-      name: title,
-      dateCompleted: formattedCompletedDate,
-      deadline: date,
-      description: description,
-    };
-    setCompletedTasks([...completedTasks, newDoneTask]);
+  const handleDoneTasks = () => {
+    const { id } = doneTask;
+    setCompletedTasks([...completedTasks, doneTask]);
     setList(list.filter((k) => k.id !== id));
     setError(false);
+    setDoneTask({});
+    setShowConfirmationModal(!showConfirmationModal);
+    setConfirmationMessage("");
   };
 
   const filteredList = list.filter((item) => item.title.includes(searchQuery));
@@ -163,6 +172,15 @@ function Tasks({ showModal, setShowModal }) {
         completedTasks={completedTasks}
         viewID={viewID}
       />
+      <ConfirmationModal
+        showConfirmationModal={showConfirmationModal}
+        confirmationState={confirmationState}
+        removeItem={removeItem}
+        handleDoneTasks={handleDoneTasks}
+        setShowConfirmationModal={setShowConfirmationModal}
+        confirmationMessage={confirmationMessage}
+        setConfirmationMessage={setConfirmationMessage}
+      />
       <h2
         className={`completed-tasks-transition-button ${
           isClicked && `clicked`
@@ -184,6 +202,14 @@ function Tasks({ showModal, setShowModal }) {
             clearList={clearList}
             filteredList={filteredList}
             setShowModal={setShowModal}
+            deleteID={deleteID}
+            setDeleteID={setDeleteID}
+            doneTask={doneTask}
+            setDoneTask={setDoneTask}
+            setConfirmationState={setConfirmationState}
+            confirmationState={confirmationState}
+            showConfirmationModal={showConfirmationModal}
+            setShowConfirmationModal={setShowConfirmationModal}
           />
         </section>
       ) : (

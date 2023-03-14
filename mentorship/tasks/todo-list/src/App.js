@@ -7,9 +7,14 @@ import { useState } from "react";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   return (
     <>
-      <section className={`todo-list ${showModal ? `hidden` : null}`}>
+      <section
+        className={`todo-list ${
+          showModal || showConfirmationModal ? `hidden` : null
+        }`}
+      >
         <div className="main-page">
           <div className="greetings-calendar-container">
             <Greetings />
@@ -19,7 +24,12 @@ function App() {
         <div className="progress-container">
           <Progress />
         </div>
-        <Tasks showModal={showModal} setShowModal={setShowModal} />
+        <Tasks
+          showModal={showModal}
+          setShowModal={setShowModal}
+          showConfirmationModal={showConfirmationModal}
+          setShowConfirmationModal={setShowConfirmationModal}
+        />
       </section>
     </>
   );

@@ -3,8 +3,15 @@ import "../styles/list.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { MdOutlineTaskAlt, MdDownloadDone } from "react-icons/md";
 import { useTaskProgressContext } from "./ProgressContext";
-function List({ list, editItem, removeItem, handleDoneTasks }) {
-  const { formattedDate } = useTaskProgressContext();
+function List({
+  list,
+  editItem,
+  setDoneTask,
+  setDeleteID,
+  setShowConfirmationModal,
+  setConfirmationState,
+}) {
+  const { formattedDate, formattedCompletedDate } = useTaskProgressContext();
   return (
     <ul>
       {list.map((item) => {
@@ -24,12 +31,26 @@ function List({ list, editItem, removeItem, handleDoneTasks }) {
               <span onClick={() => editItem(id)}>
                 <AiOutlineEdit />
               </span>
-              <span onClick={() => removeItem(id)}>
+              <span
+                onClick={() => {
+                  setShowConfirmationModal(true);
+                  setConfirmationState(1);
+                  setDeleteID(id);
+                }}
+              >
                 <AiOutlineDelete />
               </span>
               <span
                 onClick={() => {
-                  handleDoneTasks(id, title, date, description);
+                  setShowConfirmationModal(true);
+                  setConfirmationState(null);
+                  setDoneTask({
+                    id: id,
+                    name: title,
+                    dateCompleted: formattedCompletedDate,
+                    deadline: date,
+                    description: description,
+                  });
                 }}
               >
                 <MdDownloadDone />

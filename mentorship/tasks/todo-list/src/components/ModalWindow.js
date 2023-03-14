@@ -95,7 +95,7 @@ function ModalWindow({
                   className="modal-window-buttons"
                   onClick={handleModalWindow}
                 >
-                  Ok
+                  OK
                 </button>
               )}
 
@@ -113,7 +113,7 @@ function ModalWindow({
             const { id, name, description, deadline, dateCompleted } = item;
             if (viewID === id) {
               return (
-                <>
+                <div key={Math.random().toString()}>
                   <h1>"{name}" overview</h1>
                   <div className="modal-window-form">
                     <span>Task name:</span>
@@ -154,9 +154,9 @@ function ModalWindow({
                     className="modal-window-buttons"
                     onClick={handleModalWindow}
                   >
-                    Ok
+                    OK
                   </button>
-                </>
+                </div>
               );
             }
             return null;
