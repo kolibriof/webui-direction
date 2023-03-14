@@ -60,9 +60,6 @@ function TasksNewTasks({
               showConfirmationModal={showConfirmationModal}
               setShowConfirmationModal={setShowConfirmationModal}
             />
-            <button onClick={clearList} className="task-list-clear-list">
-              Clear List
-            </button>
           </>
         ) : (
           <ul>

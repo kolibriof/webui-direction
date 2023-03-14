@@ -85,9 +85,6 @@ function Tasks({
       setErrorDate(false);
     }
   };
-  const clearList = () => {
-    setList([]);
-  };
 
   const removeItem = () => {
     setList(list.filter((k) => k.id !== deleteID));
@@ -198,7 +195,6 @@ function Tasks({
             editItem={editItem}
             removeItem={removeItem}
             handleDoneTasks={handleDoneTasks}
-            clearList={clearList}
             filteredList={filteredList}
             setShowModal={setShowModal}
             deleteID={deleteID}
@@ -221,7 +217,6 @@ function Tasks({
             editItem={editItem}
             removeItem={removeItem}
             handleDoneTasks={handleDoneTasks}
-            clearList={clearList}
             completedTasksfilteredList={completedTasksfilteredList}
             completedTasks={completedTasks}
             completedTasksSearchQuery={completedTasksSearchQuery}
