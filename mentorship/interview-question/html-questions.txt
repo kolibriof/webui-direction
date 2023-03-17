@@ -1,0 +1,30 @@
+1. What is HTML?
+2. What is the difference between HTML elements and tags?
+3. What are Attributes and how do you use them ?
+4. What is the difference between a block-level element and an inline element?
+5. When are comments used in HTML? Why shouldn't we use too many comments and how to maintain readability in HTML?
+6. Can we display a web page inside a web page or Is nesting of webpages possible?
+7. What are the HTML tags used to display the data in the tabular form?
+8. Name some common lists that are used when designing a page.
+9. Can we make all the markup using only the div tag? What is semantic HTML? Why should we follow a semantic approach to markup?
+10. How to create a nested webpage in HTML?
+11. What is an image map?
+12. Explain the default layout of HTML.
+13. What is the difference between DIV and SPAN in HTML? What is the use of a span tag? Explain with example
+14. What is the purpose of using alternative texts in images?
+15. What is <!DOCTYPE html>? Is the <!DOCTYPE html> tag considered as a HTML tag?
+16. How do you create text on a webpage that allows you to send an email when clicked?
+17. What happens if there is no text between the tags? Does this affect the display of the HTML file?
+18. What types of graphics are supported by HTML5?
+19. How can you apply JavaScript to a web page?
+20. What are data- attributes good for?
+21. Describe the difference between <script>, <script async> and <script defer>
+22. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
+23. What is metadata in HTML5 and how is it specified?
+24. How can HTML5 web pages be optimized?
+25. What is the difference between the ‘id’ attribute and the ‘class’ attribute of HTML elements?
+26. What is the difference between <strong>, <b> tags and <em>, <i> tags?
+27. How to specify the link in HTML and explain the target attribute?
+28. What is a manifest file in HTML5?
+29. What’s one main result if you do not specify a doctype in an HTML page?
+30. Can we modify the attribute’s value of the HTML tag dynamically?

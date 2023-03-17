@@ -1,0 +1,29 @@
+1. What is the Box model in CSS? Which CSS properties are a part of it?
+2. What are the advantages of using CSS?
+3. What are the limitations of CSS?
+4. What are the different types of Selectors in CSS?
+5. What is a CSS Preprocessor? What are Sass, Less, and Stylus? Why do people use them?
+6. What is the difference between inline, inline-block, and block?
+7. What are Pseudo elements and Pseudo classes?
+8. Does margin-top or margin-bottom have an effect on inline elements?
+9. What property is used for changing the font face?
+10. What are the differences between adaptive design and responsive design?
+11. How are the CSS selectors matched against the elements by the browser?
+12. How is border-box different from content-box?
+13. What is a z-index, and how does it function?
+14. What are the properties of flexbox?
+15. What is cascading in CSS?
+16. Explain CSS position property?
+17. What is the grid system?
+18. What are the different ways to hide the element using CSS?
+19. How does Calc work?
+20. What do CSS Custom properties variables mean?
+21. What does !important mean in CSS?
+22. What are the advantages of using translate() instead of absolute position?
+23. How will you fix browser-specific styling issues?
+24. Can we add 3D transformations to our project using CSS?
+25. What are CSS transitions?
+26. What are @keframes used for?
+27. What is meant by universal selector?
+29. What are the attribute selectors?
+30. What class naming methodologies in CSS do you know?
