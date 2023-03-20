@@ -121,7 +121,7 @@ function Tasks({
       setTimeout(() => setIsEditing(!isEditing), 200);
     }
     setShowModal(!showModal);
-    setName("");
+    setTimeout(() => setName(""), 200);
     setError(false);
     setTimeout(() => setViewCompletedTasks(false), 200);
   };
