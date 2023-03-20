@@ -12,7 +12,7 @@ function List({
   setConfirmationState,
 }) {
   const { formattedDate, formattedCompletedDate } = useTaskProgressContext();
-  const handleItemButtons = (id, { type }, title, description, date) => {
+  const handleItemButtons = (id, { type }, title, date, description) => {
     if (type === "edit") {
       editItem(id);
     } else if (type === "delete") {

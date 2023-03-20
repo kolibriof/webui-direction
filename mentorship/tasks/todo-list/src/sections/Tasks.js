@@ -65,6 +65,7 @@ function Tasks({
       );
       setIsEditing(false);
       setName("");
+      setDescription("");
       setEditID(null);
       setShowModal(!showModal);
       setError(false);
@@ -96,8 +97,11 @@ function Tasks({
     setIsEditing(true);
     setShowModal(!showModal);
     const specItem = list.find((d) => d.id === id);
+    const specItemDate = new Date(specItem.date);
     setEditID(id);
     setName(specItem.title);
+    setDescription(specItem.description);
+    setSelectedDate(specItemDate);
   };
   const removeCompletedItem = (id) => {
     setCompletedTasks(completedTasks.filter((k) => k.id !== id));
@@ -114,12 +118,12 @@ function Tasks({
     if (isEditing) {
       setShowModal(!showModal);
       setError(false);
-      setTimeout(() => setIsEditing(!isEditing), 1000);
+      setTimeout(() => setIsEditing(!isEditing), 200);
     }
     setShowModal(!showModal);
     setName("");
     setError(false);
-    setTimeout(() => setViewCompletedTasks(false), 1000);
+    setTimeout(() => setViewCompletedTasks(false), 200);
   };
   const handleDoneTasks = () => {
     const { id } = doneTask;
