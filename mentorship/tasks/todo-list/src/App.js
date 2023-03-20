@@ -9,29 +9,27 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   return (
-    <>
-      <section
-        className={`todo-list ${
-          showModal || showConfirmationModal ? `hidden` : null
-        }`}
-      >
-        <div className="main-page">
-          <div className="greetings-calendar-container">
-            <Greetings />
-            <Calendar />
-          </div>
+    <section
+      className={`todo-list ${
+        showModal || showConfirmationModal ? `hidden` : null
+      }`}
+    >
+      <div className="main-page">
+        <div className="greetings-calendar-container">
+          <Greetings />
+          <Calendar />
         </div>
-        <div className="progress-container">
-          <Progress />
-        </div>
-        <Tasks
-          showModal={showModal}
-          setShowModal={setShowModal}
-          showConfirmationModal={showConfirmationModal}
-          setShowConfirmationModal={setShowConfirmationModal}
-        />
-      </section>
-    </>
+      </div>
+      <div className="progress-container">
+        <Progress />
+      </div>
+      <Tasks
+        showModal={showModal}
+        setShowModal={setShowModal}
+        showConfirmationModal={showConfirmationModal}
+        setShowConfirmationModal={setShowConfirmationModal}
+      />
+    </section>
   );
 }
 

@@ -5,9 +5,7 @@ import { MdOutlineTaskAlt } from "react-icons/md";
 function CompletedTasksList({ completedTasks }) {
   return (
     <ul>
-      {completedTasks.map((item) => {
-        const { id, name } = item;
-
+      {completedTasks.map(({ id, name }) => {
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />

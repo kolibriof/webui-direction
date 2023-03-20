@@ -16,7 +16,7 @@ function Tasks({
 }) {
   const [deleteID, setDeleteID] = useState(null);
   const [doneTask, setDoneTask] = useState({});
-  const [confirmationState, setConfirmationState] = useState(null);
+  const [confirmationState, setConfirmationState] = useState(0);
   const [confirmationMessage, setConfirmationMessage] = useState("");
   const [viewCompletedTasks, setViewCompletedTasks] = useState(false);
   const [errorDate, setErrorDate] = useState(false);

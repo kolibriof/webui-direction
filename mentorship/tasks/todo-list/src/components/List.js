@@ -12,10 +12,28 @@ function List({
   setConfirmationState,
 }) {
   const { formattedDate, formattedCompletedDate } = useTaskProgressContext();
+  const handleItemButtons = (id, { type }, title, description, date) => {
+    if (type === "edit") {
+      editItem(id);
+    } else if (type === "delete") {
+      setShowConfirmationModal(true);
+      setConfirmationState(1);
+      setDeleteID(id);
+    } else if (type === "done") {
+      setShowConfirmationModal(true);
+      setConfirmationState(null);
+      setDoneTask({
+        id: id,
+        name: title,
+        dateCompleted: formattedCompletedDate,
+        deadline: date,
+        description: description,
+      });
+    }
+  };
   return (
     <ul>
-      {list.map((item) => {
-        const { id, title, date, description } = item;
+      {list.map(({ id, title, date, description }) => {
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />
@@ -28,30 +46,42 @@ function List({
               {date}
             </p>
             <div className="list-span">
-              <span onClick={() => editItem(id)}>
+              <span
+                onClick={() =>
+                  handleItemButtons(
+                    id,
+                    { type: "edit" },
+                    title,
+                    date,
+                    description
+                  )
+                }
+              >
                 <AiOutlineEdit />
               </span>
               <span
-                onClick={() => {
-                  setShowConfirmationModal(true);
-                  setConfirmationState(1);
-                  setDeleteID(id);
-                }}
+                onClick={() =>
+                  handleItemButtons(
+                    id,
+                    { type: "delete" },
+                    title,
+                    date,
+                    description
+                  )
+                }
               >
                 <AiOutlineDelete />
               </span>
               <span
-                onClick={() => {
-                  setShowConfirmationModal(true);
-                  setConfirmationState(null);
-                  setDoneTask({
-                    id: id,
-                    name: title,
-                    dateCompleted: formattedCompletedDate,
-                    deadline: date,
-                    description: description,
-                  });
-                }}
+                onClick={() =>
+                  handleItemButtons(
+                    id,
+                    { type: "done" },
+                    title,
+                    date,
+                    description
+                  )
+                }
               >
                 <MdDownloadDone />
               </span>
