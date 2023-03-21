@@ -34,13 +34,17 @@ function List({
   return (
     <ul>
       {list.map(({ id, title, date, description }) => {
+        const deadlineDate = new Date(formattedDate);
+        const taskDate = new Date(date);
+        const isOutOfDeadline = deadlineDate > taskDate;
+
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />
             <p className="single-task-title">{title}</p>
             <p
               className={`single-task-date ${
-                new Date(formattedDate) > new Date(date) && `out-of-deadline`
+                isOutOfDeadline && `out-of-deadline`
               }`}
             >
               {date}

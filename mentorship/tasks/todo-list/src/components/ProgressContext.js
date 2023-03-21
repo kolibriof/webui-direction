@@ -4,29 +4,23 @@ export const TaskProgressContext = createContext();
 
 export const useTaskProgressContext = () => useContext(TaskProgressContext);
 
-const getLocalListStorage = () => {
-  let list = localStorage.getItem("list");
-  if (list) {
-    return JSON.parse(list);
-  } else {
-    return [];
-  }
-};
-const getLocalCompletedTasksStorage = () => {
-  let completedTasks = localStorage.getItem("completedTasks");
-  if (completedTasks) {
-    return JSON.parse(completedTasks);
+const getLocalStorage = (key) => {
+  let item = localStorage.getItem(key);
+  if (item) {
+    return JSON.parse(item);
   } else {
     return [];
   }
 };
 const ProgressContext = ({ children }) => {
   const [completedTasks, setCompletedTasks] = useState(
-    getLocalCompletedTasksStorage()
+    getLocalStorage("completedTasks")
   );
   const [isClicked, setIsClicked] = useState(false);
-  const [list, setList] = useState(getLocalListStorage());
+  const [list, setList] = useState(getLocalStorage("list"));
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const formattedCompletedDate = new Date().toLocaleDateString("en-US", {
     day: "2-digit",
     month: "2-digit",
@@ -45,6 +39,10 @@ const ProgressContext = ({ children }) => {
         selectedDate,
         setSelectedDate,
         formattedCompletedDate,
+        showModal,
+        setShowModal,
+        showConfirmationModal,
+        setShowConfirmationModal,
       }}
     >
       {children}

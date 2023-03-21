@@ -3,17 +3,12 @@ import ModalWindow from "../components/ModalWindow";
 import "../styles/tasks.css";
 import "../styles/list.css";
 import { useTaskProgressContext } from "../components/ProgressContext";
-import TasksNewTasks from "../components/TasksNewTasks";
-import TasksCompletedTasks from "../components/TasksCompletedTasks";
+import NewTasks from "../components/NewTasks";
+import CompletedTasksList from "../components/CompletedTasksList";
 import ConfirmationModal from "../components/ConfirmationModal";
 import { format } from "date-fns";
 
-function Tasks({
-  showModal,
-  setShowModal,
-  showConfirmationModal,
-  setShowConfirmationModal,
-}) {
+function Tasks() {
   const [deleteID, setDeleteID] = useState(null);
   const [doneTask, setDoneTask] = useState({});
   const [confirmationState, setConfirmationState] = useState(0);
@@ -38,6 +33,10 @@ function Tasks({
     setIsClicked,
     selectedDate,
     setSelectedDate,
+    showModal,
+    setShowModal,
+    showConfirmationModal,
+    setShowConfirmationModal,
   } = useTaskProgressContext();
 
   const handleSubmit = (e) => {
@@ -195,7 +194,7 @@ function Tasks({
       </h2>
       {!isClicked ? (
         <section className="tasks-container">
-          <TasksNewTasks
+          <NewTasks
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             handleModalWindow={handleModalWindow}
@@ -217,7 +216,7 @@ function Tasks({
         </section>
       ) : (
         <section className="tasks-container">
-          <TasksCompletedTasks
+          <CompletedTasksList
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
             handleModalWindow={handleModalWindow}

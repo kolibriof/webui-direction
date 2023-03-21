@@ -50,18 +50,14 @@ function ConfirmationModal({
             id="my_id"
             type="button"
             className="modal-window-buttons"
-            onClick={(d) => {
-              handleConfirmButton(d);
-            }}
+            onClick={handleConfirmButton}
           >
             YES
           </button>
           <button
             type="button"
             className="modal-window-buttons"
-            onClick={(d) => {
-              handleConfirmButton(d);
-            }}
+            onClick={handleConfirmButton}
           >
             NO
           </button>

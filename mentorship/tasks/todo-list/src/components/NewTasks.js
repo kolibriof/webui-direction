@@ -15,7 +15,6 @@ function TasksNewTasks({
   editItem,
   removeItem,
   handleDoneTasks,
-  clearList,
   filteredList,
   doneTask,
   setDoneTask,
