@@ -25,38 +25,38 @@ function Progress() {
     const taskCompletedDateForToday = new Date(task.dateCompleted);
     return taskDeadline.getTime() === taskCompletedDateForToday.getTime();
   });
-  const TasksForThisWeek = list.filter((task) => {
+  const tasksForThisWeek = list.filter((task) => {
     const taskDate = new Date(task.date);
     return taskDate >= currentWeekStart && taskDate <= currentWeekEnd;
   });
-  const TasksForThisDay = list.filter((task) => {
+  const tasksForThisDay = list.filter((task) => {
     const taskDate = new Date(task.date);
     const currentDateTasks = new Date();
     currentDateTasks.setHours(0, 0, 0, 0);
     return taskDate.getTime() === currentDateTasks.getTime();
   });
-  const DailyTasksOverall =
-    TasksForThisDay.length + completedTasksForToday.length;
-  const WeeklyTasksOverall = TasksForThisWeek.length + completedThisWeek.length;
+  const dailyTasksOverall =
+    tasksForThisDay.length + completedTasksForToday.length;
+  const WeeklyTasksOverall = tasksForThisWeek.length + completedThisWeek.length;
 
   const dailyProgress =
     list.length > 0 &&
-    TasksForThisDay.length > 0 &&
+    tasksForThisDay.length > 0 &&
     completedTasksForToday.length > 0
-      ? Math.round((completedTasksForToday.length / DailyTasksOverall) * 100) +
+      ? Math.round((completedTasksForToday.length / dailyTasksOverall) * 100) +
         "%"
-      : completedTasksForToday.length === DailyTasksOverall &&
-        TasksForThisDay.length === 0
+      : completedTasksForToday.length === dailyTasksOverall &&
+        tasksForThisDay.length === 0
       ? "All done"
       : "0%";
 
   const weeklyProgress =
     list.length > 0 &&
-    TasksForThisWeek.length > 0 &&
+    tasksForThisWeek.length > 0 &&
     completedThisWeek.length > 0
       ? Math.round((completedThisWeek.length / WeeklyTasksOverall) * 100) + "%"
       : completedThisWeek.length === WeeklyTasksOverall &&
-        TasksForThisWeek.length === 0
+        tasksForThisWeek.length === 0
       ? "All done"
       : "0%";
 

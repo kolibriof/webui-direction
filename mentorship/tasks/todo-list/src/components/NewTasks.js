@@ -7,7 +7,7 @@ import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { MdOutlineTaskAlt, MdDownloadDone } from "react-icons/md";
 import { useTaskProgressContext } from "./ProgressContext";
 
-function TasksNewTasks({
+function NewTasks({
   searchQuery,
   setSearchQuery,
   handleModalWindow,
@@ -26,6 +26,10 @@ function TasksNewTasks({
   setConfirmationState,
 }) {
   const { formattedDate, formattedCompletedDate } = useTaskProgressContext();
+  const Search = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <>
       <h1>Tasks</h1>
@@ -35,7 +39,7 @@ function TasksNewTasks({
             type="text"
             placeholder="Search by the task name..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={Search}
           />
         </div>
         <div className="tasks-add-new-task">
@@ -119,4 +123,4 @@ function TasksNewTasks({
   );
 }
 
-export default TasksNewTasks;
+export default NewTasks;
