@@ -37,7 +37,7 @@ function Progress() {
   });
   const dailyTasksOverall =
     tasksForThisDay.length + completedTasksForToday.length;
-  const WeeklyTasksOverall = tasksForThisWeek.length + completedThisWeek.length;
+  const weeklyTasksOverall = tasksForThisWeek.length + completedThisWeek.length;
 
   const dailyProgress =
     list.length > 0 &&
@@ -54,8 +54,8 @@ function Progress() {
     list.length > 0 &&
     tasksForThisWeek.length > 0 &&
     completedThisWeek.length > 0
-      ? Math.round((completedThisWeek.length / WeeklyTasksOverall) * 100) + "%"
-      : completedThisWeek.length === WeeklyTasksOverall &&
+      ? Math.round((completedThisWeek.length / weeklyTasksOverall) * 100) + "%"
+      : completedThisWeek.length === weeklyTasksOverall &&
         tasksForThisWeek.length === 0
       ? "All done"
       : "0%";
