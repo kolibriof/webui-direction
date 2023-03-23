@@ -51,7 +51,7 @@
 26. What is the difference between <strong>, <b> tags and <em>, <i> tags?
   - the main difference is that strong and em are semantic and other two are not 
 27. How to specify the link in HTML and explain the target attribute?
-  - 
+  - <a href="link.com", target specifies where the link should be opened, ex.: _self, _blank, _top, _parent
 28. What is a manifest file in HTML5?
   - manifest file tells browser to cache certain pages or files
 29. What’s one main result if you do not specify a doctype in an HTML page?
