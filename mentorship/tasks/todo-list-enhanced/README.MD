@@ -82,7 +82,7 @@
 First phase: 
 - greetings section 
 - calendar section view 
-- mocked context and progress section 
+- mocked context and progress section
 
 Second phase:
 - tabs and lists sections view 
