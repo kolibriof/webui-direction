@@ -1,0 +1,14 @@
+.welcome-message-container {
+  display: flex;
+  flex-direction: column;
+}
+.welcome-message-container h1,
+.welcome-message-container h2 {
+  margin: 5px 0 10px -2px;
+}
+.welcome-message-container h2 {
+  font-size: 30px;
+}
+.welcome-message-container h1 {
+  font-size: 35px;
+}
