@@ -85,33 +85,35 @@
 ## 22. Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 
 - It is a good idea because of performance and page appearance. Your CSS code may load after the HTML elements are loaded, which can result in weird styling behavior.
-  ##23. What is metadata in HTML5 and how is it specified?
+
+## 23. What is metadata in HTML5 and how is it specified?
+
 - Metadata is providing the information about the content itself, most of the attributes are not displayed on the page, except of, for example, `<title>`, which displays the page title. Example metadata tags: `<link>`, `<meta>`
 
-##24. How can HTML5 web pages be optimized?
+## 24. How can HTML5 web pages be optimized?
 
 - By using semantic tags, compressing images and minimizing code
 
-##25. What is the difference between the ‘id’ attribute and the ‘class’ attribute of HTML elements?
+## 25. What is the difference between the ‘id’ attribute and the ‘class’ attribute of HTML elements?
 
 - `id` is used to identify a single element, while `class` is used to identify a group of elements
 
-##26. What is the difference between `<strong>`, `<b>` tags and `<em>`, `<i>` tags?
+## 26. What is the difference between `<strong>`, `<b>` tags and `<em>`, `<i>` tags?
 
 - The main difference is that `<strong>` and `<em>` are semantic and other two are not
 
-##27. How to specify the link in HTML and explain the target attribute?
+## 27. How to specify the link in HTML and explain the target attribute?
 
 - To specify a link in HTML we use the anchor tag `<a>`. For example, `<a href="https://example.com">Example</a>`. The `target` attribute specifies where the link should be opened, ex.: `_self`, `_blank`, `_top`, `_parent`.
 
-##28. What is a manifest file in HTML5?
+## 28. What is a manifest file in HTML5?
 
 - A manifest file is a simple text file with the extension `.appcache` that tells the browser to cache certain pages or files. It's used in offline web applications to allow them to work even when the user is not connected to the internet.
 
-##29. What’s one main result if you do not specify a doctype in an HTML page?
+## 29. What’s one main result if you do not specify a doctype in an HTML page?
 
 - If you do not specify a doctype in an HTML page, it can result in the browser switching to quirks mode, which means that it will not follow the standard rendering rules of the latest HTML version.
 
-##30. Can we modify the attribute’s value of the HTML tag dynamically?
+## 30. Can we modify the attribute’s value of the HTML tag dynamically?
 
 - Yes, we can use JavaScript to modify the attribute's value of an HTML tag dynamically. For example, `document.getElementById("myImage").src = "new-image.jpg";` would change the `src` attribute of the image with id `"myImage"` to `"new-image.jpg"`.
