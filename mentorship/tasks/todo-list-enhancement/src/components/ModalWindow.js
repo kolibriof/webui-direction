@@ -3,27 +3,26 @@ import ReactDOM from "react-dom";
 import "../styles/modal-window.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useListContext } from "../context/ListContext";
+import { useTaskProgressContext } from "../context/ProgressContext";
 
 const MAX_LENGTH = 180;
 
-function ModalWindow(props) {
+function ModalWindow({ handleDescription }) {
   const {
     name,
     handleSubmit,
     setName,
-    showModal,
     isEditing,
     handleModalWindow,
     error,
-    selectedDate,
-    setSelectedDate,
     description,
     errorDate,
-    handleDescription,
     viewCompletedTasks,
-    completedTasks,
     viewID,
-  } = props;
+  } = useListContext();
+  const { completedTasks, selectedDate, setSelectedDate, showModal } =
+    useTaskProgressContext();
 
   const characterCountClassName = description.length >= 100 ? "modified" : "";
 

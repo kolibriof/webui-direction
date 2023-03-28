@@ -3,15 +3,12 @@ import "../styles/list.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { MdOutlineTaskAlt, MdDownloadDone } from "react-icons/md";
 import { useTaskProgressContext } from "../context/ProgressContext";
-function List({
-  list,
-  editItem,
-  setDoneTask,
-  setDeleteID,
-  setShowConfirmationModal,
-  setConfirmationState,
-}) {
-  const { formattedCompletedDate, today } = useTaskProgressContext();
+import { useListContext } from "../context/ListContext";
+function List() {
+  const { editItem, setDoneTask, setDeleteID, setConfirmationState } =
+    useListContext();
+  const { list, formattedCompletedDate, setShowConfirmationModal, today } =
+    useTaskProgressContext();
   const handleItemButtons = (id, { type }, title, date, description) => {
     if (type === "edit") {
       editItem(id);

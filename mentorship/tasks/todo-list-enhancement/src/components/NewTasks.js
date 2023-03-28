@@ -6,26 +6,27 @@ import "../styles/list.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import { MdOutlineTaskAlt, MdDownloadDone } from "react-icons/md";
 import { useTaskProgressContext } from "../context/ProgressContext";
+import { useListContext } from "../context/ListContext";
 
-function NewTasks({
-  searchQuery,
-  setSearchQuery,
-  handleModalWindow,
-  list,
-  editItem,
-  removeItem,
-  handleDoneTasks,
-  filteredList,
-  doneTask,
-  setDoneTask,
-  deleteID,
-  setDeleteID,
-  showConfirmationModal,
-  setShowConfirmationModal,
-  confirmationState,
-  setConfirmationState,
-}) {
-  const { formattedDate, formattedCompletedDate } = useTaskProgressContext();
+function NewTasks({ filteredList }) {
+  const {
+    searchQuery,
+    setSearchQuery,
+    handleModalWindow,
+    editItem,
+    removeItem,
+    handleDoneTasks,
+    doneTask,
+    setDoneTask,
+    deleteID,
+    setDeleteID,
+    showConfirmationModal,
+    setShowConfirmationModal,
+    confirmationState,
+    setConfirmationState,
+  } = useListContext();
+  const { formattedDate, formattedCompletedDate, list } =
+    useTaskProgressContext();
   const Search = (e) => {
     setSearchQuery(e.target.value);
   };

@@ -1,15 +1,18 @@
 import React from "react";
+import { useListContext } from "../context/ListContext";
+import { useTaskProgressContext } from "../context/ProgressContext";
 import "../styles/modal-window.css";
 
-function ConfirmationModal({
-  showConfirmationModal,
-  confirmationState,
-  removeItem,
-  handleDoneTasks,
-  setShowConfirmationModal,
-  confirmationMessage,
-  setConfirmationMessage,
-}) {
+function ConfirmationModal() {
+  const {
+    confirmationState,
+    removeItem,
+    handleDoneTasks,
+    confirmationMessage,
+    setConfirmationMessage,
+  } = useListContext();
+  const { showConfirmationModal, setShowConfirmationModal } =
+    useTaskProgressContext();
   const getConfirmationHeader = () => {
     return confirmationState === 1 ? "delete" : "complete";
   };

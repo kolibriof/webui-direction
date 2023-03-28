@@ -5,6 +5,7 @@ import Progress from "./Progress";
 import Tasks from "./Tasks";
 import CalendarContext from "../context/CalendarContext";
 import ScoreContext from "../context/ScoreContext";
+import ListContext from "../context/ListContext";
 export default function MainPage() {
   return (
     <>
@@ -21,7 +22,9 @@ export default function MainPage() {
           <Progress />
         </ScoreContext>
       </div>
-      <Tasks />
+      <ListContext>
+        <Tasks />
+      </ListContext>
     </>
   );
 }
