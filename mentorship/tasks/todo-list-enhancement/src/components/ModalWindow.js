@@ -36,8 +36,9 @@ function ModalWindow({ handleDescription }) {
     <div className={`modal-window-container ${modalWindowClassName}`}>
       {!viewCompletedTasks ? (
         <>
-          <h1>
-            {isEditing ? `Editing task '${name}' ...` : "Create a new task..."}
+          <h1 className="overview-title">
+            {isEditing ? "Editing task " : "Create a new task..."}
+            {isEditing && "`" + name + "`"}
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="modal-window-form">
@@ -113,15 +114,20 @@ function ModalWindow({ handleDescription }) {
               if (viewID === id) {
                 return (
                   <div key={id}>
-                    <h1>{`"${name}" overview`}</h1>
+                    <h1 className="overview-title">
+                      `{name}` <br />
+                      overview
+                    </h1>
                     <div className="modal-window-form">
-                      <span>Task name:</span>
-                      <input
-                        type="text"
-                        value={name}
-                        className={error ? "error" : ""}
-                        disabled={viewCompletedTasks}
-                      />
+                      <div className="task-title" data={name}>
+                        <span>Task name:</span>
+                        <input
+                          type="text"
+                          value={name}
+                          className={error ? "error" : ""}
+                          disabled={viewCompletedTasks}
+                        />
+                      </div>
                       <div className="desctiption-textarea-container">
                         <span>Description: </span>
                         <textarea

@@ -47,6 +47,12 @@ const ProgressContext = ({ children }) => {
       setGreetingMessage("Good night");
     }
   }, [now, hour]);
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks]);
 
   return (
     <TaskProgressContext.Provider
