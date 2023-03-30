@@ -22,9 +22,11 @@ export default function MainPage() {
           <Progress />
         </ScoreContext>
       </div>
-      <ListContext>
-        <Tasks />
-      </ListContext>
+      <ScoreContext>
+        <ListContext>
+          <Tasks />
+        </ListContext>
+      </ScoreContext>
     </>
   );
 }

@@ -64,7 +64,9 @@ const ScoreContext = ({ children }) => {
       : "0%";
   }, [completedThisWeekCount, tasksThisWeek, weeklyTasksOverall]);
   return (
-    <ScoreContextView.Provider value={{ dailyProgress, weeklyProgress }}>
+    <ScoreContextView.Provider
+      value={{ dailyProgress, weeklyProgress, currentWeekStart }}
+    >
       {children}
     </ScoreContextView.Provider>
   );

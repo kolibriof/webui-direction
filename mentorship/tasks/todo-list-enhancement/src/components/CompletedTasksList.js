@@ -35,7 +35,9 @@ function CompletedTasksList({ completedTasksfilteredList, handleItemView }) {
                 return (
                   <li key={id} className={`${isClicked && `completed`}`}>
                     <MdOutlineTaskAlt className="single-task-icon" />
-                    <p className="single-task-title">{name}</p>
+                    <p className="single-task-title" data-title={name}>
+                      {name}
+                    </p>
                     <p
                       className={`single-task-date ${
                         isClicked && "completed-date"

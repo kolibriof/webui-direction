@@ -21,7 +21,7 @@ function ModalWindow({ handleDescription }) {
     viewCompletedTasks,
     viewID,
   } = useListContext();
-  const { completedTasks, selectedDate, setSelectedDate, showModal } =
+  const { completedTasks, selectedDate, setSelectedDate, showModal, today } =
     useTaskProgressContext();
 
   const characterCountClassName = description.length >= 100 ? "modified" : "";
@@ -71,6 +71,7 @@ function ModalWindow({ handleDescription }) {
                 className={error ? "error" : ""}
                 placeholderText="Select deadline for your task.."
                 disabled={viewCompletedTasks}
+                minDate={today}
               />
               {!viewCompletedTasks ? (
                 <div className="modal-window-buttons-container">
