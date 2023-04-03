@@ -1,6 +1,6 @@
 import "./index.css";
 import MainPage from "./sections/MainPage";
-import { useTaskProgressContext } from "./components/ProgressContext";
+import { useTaskProgressContext } from "./context/ProgressContext";
 function App() {
   const { showModal, showConfirmationModal } = useTaskProgressContext();
   return (

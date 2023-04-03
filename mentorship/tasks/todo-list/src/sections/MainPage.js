@@ -3,19 +3,30 @@ import Greetings from "./Greetings";
 import Calendar from "./Calendar";
 import Progress from "./Progress";
 import Tasks from "./Tasks";
+import CalendarContext from "../context/CalendarContext";
+import ScoreContext from "../context/ScoreContext";
+import ListContext from "../context/ListContext";
 export default function MainPage() {
   return (
     <>
       <div className="main-page">
         <div className="greetings-calendar-container">
           <Greetings />
-          <Calendar />
+          <CalendarContext>
+            <Calendar />
+          </CalendarContext>
         </div>
       </div>
       <div className="progress-container">
-        <Progress />
+        <ScoreContext>
+          <Progress />
+        </ScoreContext>
       </div>
-      <Tasks />
+      <ScoreContext>
+        <ListContext>
+          <Tasks />
+        </ListContext>
+      </ScoreContext>
     </>
   );
 }
