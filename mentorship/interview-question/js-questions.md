@@ -1,17 +1,31 @@
-1. What is JavaScript, and how does it differ from other programming languages?
-2. Can you explain how the event loop works in JavaScript?
-3. What are the data types in JavaScript?
-4. What is the difference between null and undefined?
-5. What is the difference between == and ===?
-6. What is the difference between primitive data types and objects in JavaScript?
-7. What is closure and how does it work in JavaScript?
-8. What is hoisting in JavaScript?
-9. How do you understand the prototype-based model of objects in JavaScript?
-10. What is the use of the "this" keyword in JavaScript?
-11. What is class in JavaScript?
-12. How do you implement inheritance in JavaScript?
-13. What are the differences between function declaration and function expression?
-14. What is a promise in JavaScript and how does it work?
+## 1. What is JavaScript, and how does it differ from other programming languages?
+#### - Javascript is a scripting language that enables you to create a complex animations and features mainly on web pages. Javascript is interpreted by a browser, while most languages are compiled.
+## 2. Can you explain how the event loop works in JavaScript?
+#### - So basically `EVENT LOOP` in JS works as a maintenance for different events and task. `EVENT LOOP` is checking for pending tasks or events and then adds it to the `CALL STACK`, which has all the tasks\events that need to be executed. `EVENT LOOP` is continuosly checking for new events or tasks. 
+## 3. What are the data types in JavaScript?
+#### - String, Number, Boolean, Objects, Array Objects, Date objects, undefined, Null, BigInt(<64bit)
+## 4. What is the difference between null and undefined?
+#### - `Null` means an empty value, `undefined` on the other hand means that the variable has been decrared, but the value is not assigned.
+## 5. What is the difference between == and ===?
+#### - `==` compares the values, `===` compares the value and data types
+## 6. What is the difference between primitive data types and objects in JavaScript?
+#### - Primitive data types are: `boolean`, `string`, `number`, `symbol`, `null`. In Objects you can store different primitive types of data, ex.: `const object = {number: 1, string: "string", bool: false}` etc
+## 7. What is closure and how does it work in JavaScript?
+#### - A closure allows function to access multiple variables that are not within its own scope. It's used to create a function inside another function.
+## 8. What is hoisting in JavaScript?
+#### - Hoisting is behavior when functions and variables are put on the top of their scopes, regadless of where they are declared in the code.
+## 9. How do you understand the prototype-based model of objects in JavaScript?
+#### - Each object or function has its prototype. Prototypes are used as a template for an object and they provide a set of methods and properties that can be used by a n object.
+## 10. What is the use of the "this" keyword in JavaScript?
+#### - Keyword `this` refers to the parent object. There are different cases for `this` keyword. For example, when using `this` alone, it refers to the global object on our page. When using it inside the function, it also refers to the global object. When using in inside the event handler, it refers to the HTMl tag that it is used in. When using in the method, in refers to the object, etc.
+## 11. What is class in JavaScript?
+#### - `Clas`s in javascript is a template for creating objects.
+## 12. How do you implement inheritance in JavaScript?
+#### - By using ES6 class syntax or prototype-based model.
+## 13. What are the differences between function declaration and function expression?
+#### - Function declaration is executed before any other code, function expression is executed when the interpeter reaches that line of code. Fun. expression require storing in a variable and does not require a name, while declaration needs to have a name and does not require to be stores in variable.
+## 14. What is a promise in JavaScript and how does it work?
+#### - A `Promise` is an object representing the eventual completion or failure of an asynchronous operation.
 15. What are the different ways to handle errors in JavaScript?
 16. What is asynchronous programming in JavaScript?
 17. How would you implement a debounce function in JavaScript?
