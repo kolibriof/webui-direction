@@ -26,10 +26,20 @@
 #### - Function declaration is executed before any other code, function expression is executed when the interpeter reaches that line of code. Fun. expression require storing in a variable and does not require a name, while declaration needs to have a name and does not require to be stores in variable.
 ## 14. What is a promise in JavaScript and how does it work?
 #### - A `Promise` is an object representing the eventual completion or failure of an asynchronous operation.
-15. What are the different ways to handle errors in JavaScript?
-16. What is asynchronous programming in JavaScript?
-17. How would you implement a debounce function in JavaScript?
-18. What is the difference between "let" and "const" in JavaScript?
+## 15. What are the different ways to handle errors in JavaScript?
+#### - By using `try\catch` block, by manually console logging the errors in functions, by using throw statements, ex.: `throw new Error("error")`
+## 16. What is asynchronous programming in JavaScript?
+#### Asynchronous programming technique enables you to run tasks simultaneously, rather than waiting for them to run after one another.
+## 17. How would you implement a debounce function in JavaScript?
+ `
+function resizeWindow() {
+  console.log("Window resized!");
+}
+const debouncedResizeWindow = debounce(resizeWindow, 200);
+window.addEventListener('resize', debouncedResizeWindow);`
+#### So basically it calls the function only when user finished resizing the window. In other words, this function prevents from running every time the window gets resized, instead it only runs when the user finishes resizing the window.
+## 18. What is the difference between "let" and "const" in JavaScript?
+#### - `Let` can't be re-declared within its own block, but it can be updated. `Const` variable can't be re-decraed or updated within its own scope. `let` can be declared without initialization, `const` needs to be initialized during declaration.
 19. What is a generator function in JavaScript, and how is it used?
 20. How would you implement a map function in JavaScript?
 21. How would you implement a forEach function in JavaScript?
