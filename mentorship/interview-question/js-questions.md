@@ -120,13 +120,81 @@ tempArray.reduce((values, value) => {values[value] = (values[value] || 0) + 1; r
 
 ```
 ## 27. Can you explain the differences between cookies and localStorage in JavaScript?
+- `Cookies` and `local storage` serve different purposes. In `local storage` you can store data up to 5MB, whereas one `cookie` can store a maximum of 4096 bytes. `Cookies` are mainly for reading server-side, while `local storage` is mainly for client-side. Furthermore, `local storage` does not sent back data to the server for every HTTP request, which reduces the amount of traffic on the web page.
 ## 28. How would you implement a currying function in JavaScript?
+```javascript
+// using ES6
+
+const sendRequest => greet => name => message => `${greet} ${name}, ${message}`
+
+sendRequest("Hello")("John")("Can you add me to your friend list?");
+
+// output: Hello John, can you add me to your friend list?
+```
 ## 29. What is the difference between the "call" and "apply" methods in JavaScript?
+- These are very similar methods, except of `call` accepts arguments as a list and `apply` accepts arguments as an array.
 ## 30. What is the difference between a synchronous and an asynchronous function in JavaScript?
+- Asynchronous function can be executed in the background, in other words it is not dependent on other functions, it can run simultaneously with other functions, whereas synchronous function is dependent on the function before it, so it will run only after the execution of the previous function.
 ## 31. How do you debug JavaScript code?
+- By using `console.log()` or `debugger`, which tells the browser to stop executing the code.
 ## 32. How do you manipulate the DOM in JavaScript?
+```javascript
+// accesing DOM elements
+getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector()
+
+// changing elements' properties 
+innerHTML, textContent, className, id, src, href, style
+
+// modifying elements' content
+innerHTML, textContent, appendChild()
+
+// adding, removing elements 
+createElement(), appendChild(), emoveChild(), remove()
+
+// modifying attributes 
+setAttribute(), getAttribute()
+
+// responding to events
+
+addEventListener()
+```
 ## 33. How do you use the fetch API in JavaScript?
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    // Do something with the retrieved data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occur during the request
+    console.error('Error:', error);
+  });
+
+```
 ## 34. How do you use regular expressions in JavaScript?
+```javascript 
+// the best example is to use them for validating stuff 
+
+// example #1
+const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?$/;
+const url = 'https://www.example.com/path/to/page?query=string';
+if (url.match(urlPattern)) {
+  console.log('Valid URL');
+} else {
+  console.log('Invalid URL');
+}
+
+//example #2
+const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+const email = 'john@example.com';
+if (email.match(emailPattern)) {
+  console.log('Valid email address');
+} else {
+  console.log('Invalid email address');
+}
+```
 ## 35. Can you explain how JavaScript Web Workers work, and how they can be used to execute complex or long-running tasks in the background without blocking the main thread?
 ## 36. What are web sockets and how to use them?
 ## 37. Can you explain how the "spread" and "rest" operators work in JavaScript and how they can be used to manipulate arrays and objects?
