@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "../styles/modal-window.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTaskProgressContext } from "./ProgressContext";
 
 const MAX_LENGTH = 180;
 
@@ -24,6 +25,8 @@ function ModalWindow(props) {
     completedTasks,
     viewID,
   } = props;
+
+  const { today } = useTaskProgressContext();
 
   const characterCountClassName = description.length >= 100 ? "modified" : "";
 
@@ -71,6 +74,7 @@ function ModalWindow(props) {
                 className={error ? "error" : ""}
                 placeholderText="Select deadline for your task.."
                 disabled={viewCompletedTasks}
+                minDate={today}
               />
               {!viewCompletedTasks ? (
                 <div className="modal-window-buttons-container">

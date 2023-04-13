@@ -13,6 +13,7 @@ const getLocalStorage = (key) => {
   }
 };
 const ProgressContext = ({ children }) => {
+  const today = new Date().setHours(0, 0, 0, 0);
   const [completedTasks, setCompletedTasks] = useState(
     getLocalStorage("completedTasks")
   );
@@ -43,6 +44,7 @@ const ProgressContext = ({ children }) => {
         setShowModal,
         showConfirmationModal,
         setShowConfirmationModal,
+        today,
       }}
     >
       {children}
