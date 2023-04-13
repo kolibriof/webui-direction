@@ -37,7 +37,7 @@ function ModalWindow(props) {
     <div className={`modal-window-container ${modalWindowClassName}`}>
       {!viewCompletedTasks ? (
         <>
-          <h1>
+          <h1 className="overview-title">
             {isEditing ? `Editing task '${name}' ...` : "Create a new task..."}
           </h1>
           <form onSubmit={handleSubmit}>

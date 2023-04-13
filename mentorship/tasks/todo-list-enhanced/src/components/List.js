@@ -41,7 +41,9 @@ function List({
         return (
           <li key={id}>
             <MdOutlineTaskAlt className="single-task-icon" />
-            <p className="single-task-title">{title}</p>
+            <p className="single-task-title" data-title={title}>
+              {title}
+            </p>
             <p
               className={`single-task-date ${
                 isOutOfDeadline && `out-of-deadline`
