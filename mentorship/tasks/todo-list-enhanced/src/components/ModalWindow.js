@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "../styles/modal-window.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTaskProgressContext } from "./ProgressContext";
 
 const MAX_LENGTH = 180;
 
@@ -25,6 +26,8 @@ function ModalWindow(props) {
     viewID,
   } = props;
 
+  const { today } = useTaskProgressContext();
+
   const characterCountClassName = description.length >= 100 ? "modified" : "";
 
   const modalWindowClassName = showModal ? "show-modal" : "hide-modal";
@@ -37,7 +40,7 @@ function ModalWindow(props) {
     <div className={`modal-window-container ${modalWindowClassName}`}>
       {!viewCompletedTasks ? (
         <>
-          <h1>
+          <h1 className="overview-title">
             {isEditing ? `Editing task '${name}' ...` : "Create a new task..."}
           </h1>
           <form onSubmit={handleSubmit}>
@@ -71,6 +74,7 @@ function ModalWindow(props) {
                 className={error ? "error" : ""}
                 placeholderText="Select deadline for your task.."
                 disabled={viewCompletedTasks}
+                minDate={today}
               />
               {!viewCompletedTasks ? (
                 <div className="modal-window-buttons-container">
@@ -114,15 +118,20 @@ function ModalWindow(props) {
               if (viewID === id) {
                 return (
                   <div key={id}>
-                    <h1>{`"${name}" overview`}</h1>
+                    <h1 className="overview-title">
+                      `{name}` <br />
+                      overview
+                    </h1>
                     <div className="modal-window-form">
-                      <span>Task name:</span>
-                      <input
-                        type="text"
-                        value={name}
-                        className={error ? "error" : ""}
-                        disabled={viewCompletedTasks}
-                      />
+                      <div className="task-title" data={name}>
+                        <span>Task name:</span>
+                        <input
+                          type="text"
+                          value={name}
+                          className={error ? "error" : ""}
+                          disabled={viewCompletedTasks}
+                        />
+                      </div>
                       <div className="desctiption-textarea-container">
                         <span>Description: </span>
                         <textarea
