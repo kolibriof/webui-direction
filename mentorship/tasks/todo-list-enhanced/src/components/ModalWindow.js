@@ -118,15 +118,20 @@ function ModalWindow(props) {
               if (viewID === id) {
                 return (
                   <div key={id}>
-                    <h1>{`"${name}" overview`}</h1>
+                    <h1 className="overview-title">
+                      `{name}` <br />
+                      overview
+                    </h1>
                     <div className="modal-window-form">
-                      <span>Task name:</span>
-                      <input
-                        type="text"
-                        value={name}
-                        className={error ? "error" : ""}
-                        disabled={viewCompletedTasks}
-                      />
+                      <div className="task-title" data={name}>
+                        <span>Task name:</span>
+                        <input
+                          type="text"
+                          value={name}
+                          className={error ? "error" : ""}
+                          disabled={viewCompletedTasks}
+                        />
+                      </div>
                       <div className="desctiption-textarea-container">
                         <span>Description: </span>
                         <textarea

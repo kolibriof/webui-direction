@@ -116,6 +116,24 @@
   inline-size: 250px;
   display: block;
 }
+.task-title:hover::before {
+  color: inherit;
+  content: attr(data);
+  position: absolute;
+  top: 220px;
+  left: 330px;
+  background-color: white;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  max-width: 200px;
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+}
+.task-title::before {
+  animation: title 0.3s ease;
+}
+
 @keyframes title {
   from {
     opacity: 0;
