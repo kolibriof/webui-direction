@@ -3,30 +3,26 @@ import ReactDOM from "react-dom";
 import "../styles/modal-window.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useTaskProgressContext } from "./ProgressContext";
+import { useListContext } from "../context/ListContext";
+import { useTaskProgressContext } from "../context/ProgressContext";
 
 const MAX_LENGTH = 180;
 
-function ModalWindow(props) {
+function ModalWindow({ handleDescription }) {
   const {
     name,
     handleSubmit,
     setName,
-    showModal,
     isEditing,
     handleModalWindow,
     error,
-    selectedDate,
-    setSelectedDate,
     description,
     errorDate,
-    handleDescription,
     viewCompletedTasks,
-    completedTasks,
     viewID,
-  } = props;
-
-  const { today } = useTaskProgressContext();
+  } = useListContext();
+  const { completedTasks, selectedDate, setSelectedDate, showModal, today } =
+    useTaskProgressContext();
 
   const characterCountClassName = description.length >= 100 ? "modified" : "";
 
@@ -41,7 +37,8 @@ function ModalWindow(props) {
       {!viewCompletedTasks ? (
         <>
           <h1 className="overview-title">
-            {isEditing ? `Editing task '${name}' ...` : "Create a new task..."}
+            {isEditing ? "Editing task " : "Create a new task..."}
+            {isEditing && "`" + name + "`"}
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="modal-window-form">

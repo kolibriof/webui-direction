@@ -116,6 +116,14 @@
   inline-size: 250px;
   display: block;
 }
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .task-title:hover::before {
   color: inherit;
   content: attr(data);
@@ -132,13 +140,4 @@
 }
 .task-title::before {
   animation: title 0.3s ease;
-}
-
-@keyframes title {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
