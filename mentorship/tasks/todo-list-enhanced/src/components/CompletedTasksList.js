@@ -3,14 +3,13 @@ import "../styles/tasks.css";
 import "../styles/list.css";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { GrFormView } from "react-icons/gr";
+import { useListContext } from "../context/ListContext";
+import { useTaskProgressContext } from "../context/ProgressContext";
 
-function CompletedTasksList({
-  completedTasksfilteredList,
-  setCompletedTasksSearchQuery,
-  completedTasksSearchQuery,
-  isClicked,
-  handleItemView,
-}) {
+function CompletedTasksList({ completedTasksfilteredList, handleItemView }) {
+  const { setCompletedTasksSearchQuery, completedTasksSearchQuery } =
+    useListContext();
+  const { isClicked } = useTaskProgressContext();
   const handleTaskSearchQuery = (e) => {
     setCompletedTasksSearchQuery(e.target.value);
   };
@@ -36,7 +35,9 @@ function CompletedTasksList({
                 return (
                   <li key={id} className={`${isClicked && `completed`}`}>
                     <MdOutlineTaskAlt className="single-task-icon" />
-                    <p className="single-task-title">{name}</p>
+                    <p className="single-task-title" data-title={name}>
+                      {name}
+                    </p>
                     <p
                       className={`single-task-date ${
                         isClicked && "completed-date"

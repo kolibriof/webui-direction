@@ -3,62 +3,12 @@ import "../styles/progress.css";
 import { GoGraph } from "react-icons/go";
 import { TbStairsUp } from "react-icons/tb";
 import { RiCalendarTodoLine } from "react-icons/ri";
-import { useTaskProgressContext } from "../components/ProgressContext";
+import { useTaskProgressContext } from "../context/ProgressContext";
+import { useScoreContext } from "../context/ScoreContext";
 
 function Progress() {
-  const { list, completedTasks } = useTaskProgressContext();
-  const currentDate = new Date();
-  const currentDay = currentDate.getDay();
-  const currentWeekStart = new Date(
-    currentDate.setDate(currentDate.getDate() - currentDay)
-  );
-  const currentWeekEnd = new Date(
-    currentDate.setDate(currentWeekStart.getDate() + 6)
-  );
-
-  const completedThisWeek = completedTasks.filter((task) => {
-    const taskDate = new Date(task.deadline);
-    return taskDate >= currentWeekStart && taskDate <= currentWeekEnd;
-  });
-  const completedTasksForToday = completedTasks.filter((task) => {
-    const taskDeadline = new Date(task.deadline);
-    const taskCompletedDateForToday = new Date(task.dateCompleted);
-    return taskDeadline.getTime() === taskCompletedDateForToday.getTime();
-  });
-  const tasksForThisWeek = list.filter((task) => {
-    const taskDate = new Date(task.date);
-    return taskDate >= currentWeekStart && taskDate <= currentWeekEnd;
-  });
-  const tasksForThisDay = list.filter((task) => {
-    const taskDate = new Date(task.date);
-    const currentDateTasks = new Date();
-    currentDateTasks.setHours(0, 0, 0, 0);
-    return taskDate.getTime() === currentDateTasks.getTime();
-  });
-  const dailyTasksOverall =
-    tasksForThisDay.length + completedTasksForToday.length;
-  const weeklyTasksOverall = tasksForThisWeek.length + completedThisWeek.length;
-
-  const dailyProgress =
-    list.length > 0 &&
-    tasksForThisDay.length > 0 &&
-    completedTasksForToday.length > 0
-      ? Math.round((completedTasksForToday.length / dailyTasksOverall) * 100) +
-        "%"
-      : completedTasksForToday.length === dailyTasksOverall &&
-        tasksForThisDay.length === 0
-      ? "All done"
-      : "0%";
-
-  const weeklyProgress =
-    list.length > 0 &&
-    tasksForThisWeek.length > 0 &&
-    completedThisWeek.length > 0
-      ? Math.round((completedThisWeek.length / weeklyTasksOverall) * 100) + "%"
-      : completedThisWeek.length === weeklyTasksOverall &&
-        tasksForThisWeek.length === 0
-      ? "All done"
-      : "0%";
+  const { list } = useTaskProgressContext();
+  const { weeklyProgress, dailyProgress } = useScoreContext();
 
   return (
     <section className="progress-section">

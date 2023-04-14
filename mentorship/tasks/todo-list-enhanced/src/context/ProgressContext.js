@@ -1,4 +1,10 @@
-import React, { createContext, useState, useContext } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useMemo,
+  useEffect,
+} from "react";
 
 export const TaskProgressContext = createContext();
 
@@ -13,7 +19,6 @@ const getLocalStorage = (key) => {
   }
 };
 const ProgressContext = ({ children }) => {
-  const today = new Date().setHours(0, 0, 0, 0);
   const [completedTasks, setCompletedTasks] = useState(
     getLocalStorage("completedTasks")
   );
@@ -27,6 +32,27 @@ const ProgressContext = ({ children }) => {
     month: "2-digit",
     year: "numeric",
   });
+  const today = new Date().setHours(0, 0, 0, 0);
+  const [greetingMessage, setGreetingMessage] = useState("");
+  const now = useMemo(() => new Date(), []);
+  const hour = useMemo(() => now.getHours(), [now]);
+  useEffect(() => {
+    if (hour >= 5 && hour < 12) {
+      setGreetingMessage("Good morning");
+    } else if (hour >= 12 && hour < 18) {
+      setGreetingMessage("Good afternoon");
+    } else if (hour >= 18 && hour < 22) {
+      setGreetingMessage("Good evening");
+    } else {
+      setGreetingMessage("Good night");
+    }
+  }, [now, hour]);
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks]);
 
   return (
     <TaskProgressContext.Provider
@@ -45,6 +71,7 @@ const ProgressContext = ({ children }) => {
         showConfirmationModal,
         setShowConfirmationModal,
         today,
+        greetingMessage,
       }}
     >
       {children}
