@@ -30,11 +30,15 @@ function CompletedTasksList({
       <div className="tasks-task-list">
         {
           <ul>
-            {completedTasksfilteredList.length > 0 ? (
+            {completedTasksfilteredList?.length > 0 ? (
               completedTasksfilteredList.map((item) => {
                 const { id, name, dateCompleted } = item;
                 return (
-                  <li key={id} className={`${isClicked && `completed`}`}>
+                  <li
+                    key={id}
+                    data-testid={`${id}`}
+                    className={`${isClicked && `completed`}`}
+                  >
                     <MdOutlineTaskAlt className="single-task-icon" />
                     <p className="single-task-title">{name}</p>
                     <p
@@ -45,7 +49,10 @@ function CompletedTasksList({
                       {dateCompleted}
                     </p>
                     <div className="list-span">
-                      <span onClick={() => handleItemView(id)}>
+                      <span
+                        onClick={() => handleItemView(id)}
+                        data-testid={`handle-item-${id}`}
+                      >
                         <GrFormView />
                       </span>
                     </div>
