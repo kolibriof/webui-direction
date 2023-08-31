@@ -8,7 +8,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { act } from "react-test-renderer";
 
 describe("ConfirmationModal test suite", () => {
-  beforeEach(cleanup);
+  afterEach(() => cleanup());
   it("should render the component", () => {
     render(
       <ConfirmationModal

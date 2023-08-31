@@ -13,7 +13,7 @@ jest.mock("../../src/components/ProgressContext", () => ({
 }));
 
 describe("List component suite", () => {
-  beforeEach(cleanup);
+  afterEach(() => cleanup());
   const mockedList = [
     { id: 1, title: "Task", date: "2022-12-20", description: "desc" },
   ];

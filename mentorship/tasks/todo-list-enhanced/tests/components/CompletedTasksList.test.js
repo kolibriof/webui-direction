@@ -6,7 +6,7 @@ import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("CompletedTasksList test suite", () => {
-  beforeEach(cleanup);
+  afterEach(() => cleanup());
 
   const mockedCompletedTasks = [
     { id: 1, name: "Task 1", dateCompleted: "8/29/2023" },
