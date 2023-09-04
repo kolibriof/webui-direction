@@ -10,6 +10,7 @@ const config = {
   moduleNameMapper: {
     "\\.(css|less)$": "<rootDir>/styleMock.js",
   },
+  coveragePathIgnorePatterns: ["index.js"],
 };
 
 module.exports = config;
