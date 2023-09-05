@@ -39,6 +39,8 @@ describe("NewTasks component suite", () => {
 
   afterAll(() => jest.clearAllMocks());
 
+  const mockedFilteredList = [{ id: 1, title: "Title", date: "2023-08-22" }];
+
   it("should render component properly", () => {
     render(
       <NewTasks
@@ -112,7 +114,6 @@ describe("NewTasks component suite", () => {
     expect(queryAllByTestId("completed-tasks-list")).toHaveLength(2);
   });
   it("should mark out-of-deadline tasks in red", () => {
-    const mockedFilteredList = [{ id: 1, title: "Title", date: "2023-08-22" }];
     const { getByText } = render(
       <NewTasks
         searchQuery={"one"}
@@ -138,7 +139,6 @@ describe("NewTasks component suite", () => {
     expect(getByText("2023-08-22")).toHaveClass(`out-of-deadline`);
   });
   it("should run the editItem function on Click", () => {
-    const mockedFilteredList = [{ id: 1, title: "Title", date: "2023-08-22" }];
     const mockedEditItem = jest.fn();
     const { getByText } = render(
       <NewTasks
@@ -165,7 +165,6 @@ describe("NewTasks component suite", () => {
     expect(mockedEditItem).toBeCalledWith(mockedFilteredList[0].id);
   });
   it("should properly delete the item on Click", () => {
-    const mockedFilteredList = [{ id: 1, title: "Title", date: "2023-08-22" }];
     const mockedSetShowConfirmationModal = jest.fn();
     const mockedSetConfirmationState = jest.fn();
     const mockedSetDeleteId = jest.fn();
