@@ -251,29 +251,6 @@ describe("ModalWindow test suite", () => {
       "disabled"
     );
   });
-  // it("should assign proper class errorMessageClassName", () => {
-  //   const { getByTestId } = render(
-  //     <ModalWindow
-  //       name={undefined}
-  //       handleSubmit={jest.fn()}
-  //       setName={jest.fn()}
-  //       showModal={false}
-  //       isEditing={false}
-  //       handleModalWindow={jest.fn()}
-  //       error={true}
-  //       selectedDate={undefined}
-  //       setSelectedDate={jest.fn()}
-  //       description={""}
-  //       errorDate=""
-  //       handleDescription={jest.fn()}
-  //       viewCompletedTasks={false}
-  //       completedTasks={""}
-  //       viewID={1}
-  //     />
-  //   );
-
-  //   expect(getByTestId("error-message-test")).toHaveClass("show");
-  // });
   it("should assign proper text when Editing", () => {
     const { getByTestId } = render(
       <ModalWindow
