@@ -70,7 +70,7 @@ function NewTasks({
               filteredList.map((item) => {
                 const { id, title, date, description } = item;
                 return (
-                  <li key={id}>
+                  <li key={id} data-testid="completed-tasks-list">
                     <MdOutlineTaskAlt className="single-task-icon" />
                     <p className="single-task-title">{title}</p>
                     <p

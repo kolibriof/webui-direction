@@ -1,3 +1,4 @@
+import React from "react";
 import "./index.css";
 import MainPage from "./sections/MainPage";
 import { useTaskProgressContext } from "./components/ProgressContext";

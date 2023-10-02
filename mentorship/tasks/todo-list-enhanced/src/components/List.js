@@ -15,11 +15,13 @@ function List({
   const handleItemButtons = (id, { type }, title, date, description) => {
     if (type === "edit") {
       editItem(id);
-    } else if (type === "delete") {
+    }
+    if (type === "delete") {
       setShowConfirmationModal(true);
       setConfirmationState(1);
       setDeleteID(id);
-    } else if (type === "done") {
+    }
+    if (type === "done") {
       setShowConfirmationModal(true);
       setConfirmationState(null);
       setDoneTask({
@@ -39,7 +41,7 @@ function List({
         const isOutOfDeadline = deadlineDate > taskDate;
 
         return (
-          <li key={id}>
+          <li key={id} data-testid="task-item">
             <MdOutlineTaskAlt className="single-task-icon" />
             <p className="single-task-title">{title}</p>
             <p
@@ -49,7 +51,7 @@ function List({
             >
               {date}
             </p>
-            <div className="list-span">
+            <div className="list-span" data-testid="list-span-container">
               <span
                 onClick={() =>
                   handleItemButtons(

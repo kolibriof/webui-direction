@@ -34,10 +34,13 @@ function ModalWindow(props) {
   const errorMessageClassName = error ? "show" : "";
 
   return ReactDOM.createPortal(
-    <div className={`modal-window-container ${modalWindowClassName}`}>
+    <div
+      data-testid="test-modalWindow-className"
+      className={`modal-window-container ${modalWindowClassName}`}
+    >
       {!viewCompletedTasks ? (
         <>
-          <h1>
+          <h1 data-testid="test-editing-text">
             {isEditing ? `Editing task '${name}' ...` : "Create a new task..."}
           </h1>
           <form onSubmit={handleSubmit}>
@@ -59,6 +62,7 @@ function ModalWindow(props) {
                   className="description-textarea"
                 ></textarea>
                 <div
+                  data-testid={"test-characterCount-className"}
                   className={`character-count-modal-window ${characterCountClassName}`}
                 >
                   {description.length} / {MAX_LENGTH}
@@ -72,34 +76,29 @@ function ModalWindow(props) {
                 placeholderText="Select deadline for your task.."
                 disabled={viewCompletedTasks}
               />
-              {!viewCompletedTasks ? (
-                <div className="modal-window-buttons-container">
-                  <button
-                    type="submit"
-                    className={`modal-window-buttons ${disabledButtonClassName}`}
-                    disabled={!name || !selectedDate}
-                  >
-                    {isEditing ? "Edit" : "Save"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleModalWindow}
-                    className="modal-window-buttons"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              ) : (
+
+              <div className="modal-window-buttons-container">
+                <button
+                  type="submit"
+                  data-testid="test-disabledButton-className"
+                  className={`modal-window-buttons ${disabledButtonClassName}`}
+                  disabled={!name || !selectedDate}
+                >
+                  {isEditing ? "Edit" : "Save"}
+                </button>
                 <button
                   type="button"
-                  className="modal-window-buttons"
                   onClick={handleModalWindow}
+                  className="modal-window-buttons"
                 >
-                  OK
+                  Cancel
                 </button>
-              )}
+              </div>
 
-              <p className={`error-message ${errorMessageClassName}`}>
+              <p
+                data-testid="error-message-test"
+                className={`error-message ${errorMessageClassName}`}
+              >
                 {errorDate
                   ? "Please enter a valid date that is today or in the future!"
                   : "Please enter a task name!"}
@@ -113,7 +112,7 @@ function ModalWindow(props) {
             ({ id, name, description, deadline, dateCompleted }) => {
               if (viewID === id) {
                 return (
-                  <div key={id}>
+                  <div key={id} data-testid="test-main-container">
                     <h1>{`"${name}" overview`}</h1>
                     <div className="modal-window-form">
                       <span>Task name:</span>
